@@ -1,5 +1,9 @@
+# IDE / SO
 .DS_Store
 Thumbs.db
 *.log
 .cursor/
 .vscode/
+
+# Manutenção local — não publicar (site usa só docs/)
+scripts/
