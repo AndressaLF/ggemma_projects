@@ -10,7 +10,7 @@
 <body>
   <div class="container">
     <nav class="breadcrumb">
-      <a href="index.html">← Vitrine de ferramentas GGEMMA</a>
+      <a href="index.html">🌊 ← Vitrine de ferramentas GGEMMA</a>
     </nav>
 
     <header class="product-hero">
@@ -24,15 +24,15 @@
         Ferramenta de conversão batimétrica desenvolvida no laboratório <strong>GGEMMA</strong>.
       </p>
       <div class="badge-row">
-        <span class="badge local">Repositório local</span>
-        <span class="badge">SIRGAS 2000 UTM</span>
-        <span class="badge">tkinter GUI</span>
+        <span class="badge">🗺️ Conversão batimétrica</span>
+        <span class="badge">📍 SIRGAS 2000 UTM</span>
+        <span class="badge">🖥️ Interface gráfica</span>
       </div>
     </header>
 
     <main>
       <section class="content-block">
-        <h2>Problema que resolve</h2>
+        <h2>🎯 Problema que resolve</h2>
         <p style="margin: 0; color: var(--text-muted);">
           Levantamentos batimétricos chegam em planilhas, arquivos de texto e logs
           heterogêneos. Antes de usar no QGIS ou ArcGIS, é preciso gerar geometrias
@@ -42,10 +42,10 @@
       </section>
 
       <section class="content-block">
-        <h2>Ferramentas incluídas</h2>
+        <h2>🧰 Ferramentas incluídas</h2>
         <ul class="tool-list">
           <li>
-            <span class="tool-name">converter_shapefile_batimetria.py</span>
+            <span class="tool-name">📐 converter_shapefile_batimetria.py</span>
             <span class="tool-version">v1.8.0 · Contornos batimétricos</span>
             <span class="tool-desc">
               Gera polígonos de área (<code>CA_&lt;arquivo&gt;_&lt;pasta&gt;.shp</code>) e linhas
@@ -54,7 +54,7 @@
             </span>
           </li>
           <li>
-            <span class="tool-name">converter_linhas_batimetria.py</span>
+            <span class="tool-name">〰️ converter_linhas_batimetria.py</span>
             <span class="tool-version">v1.0.1 · Linhas batimétricas</span>
             <span class="tool-desc">
               Exporta apenas linhas de navegação (LineString) — um shapefile por arquivo
@@ -62,7 +62,7 @@
             </span>
           </li>
           <li>
-            <span class="tool-name">converter_batimetria2.py</span>
+            <span class="tool-name">⚙️ converter_batimetria2.py</span>
             <span class="tool-version">v1.6.0 · Motor de leitura</span>
             <span class="tool-desc">
               Biblioteca compartilhada: leitura multi-formato, filtros geográficos,
@@ -73,29 +73,29 @@
       </section>
 
       <section class="content-block">
-        <h2>Inteligência implementada</h2>
+        <h2>🧠 Recursos principais</h2>
         <div class="feature-grid">
           <div class="feature">
-            <h3>Áreas desconectadas</h3>
+            <h3>🗺️ Áreas desconectadas</h3>
             <p>Grade UTM adaptativa separa múltiplas áreas no mesmo arquivo (ex.: Leplac Amapá).</p>
           </div>
           <div class="feature">
-            <h3>Deduplicação</h3>
+            <h3>🔄 Deduplicação</h3>
             <p>Fingerprint normalizado ignora arquivos com conteúdo batimétrico equivalente.</p>
           </div>
           <div class="feature">
-            <h3>Trilhas OBS</h3>
+            <h3>🛤️ Trilhas OBS</h3>
             <p>Agrupamento por trilha de observação gera polígonos/linhas por passagem.</p>
           </div>
           <div class="feature">
-            <h3>Filtros de qualidade</h3>
+            <h3>✅ Filtros de qualidade</h3>
             <p>Outliers, profundidade inválida e pontos fora do Brasil são descartados.</p>
           </div>
         </div>
       </section>
 
       <section class="content-block">
-        <h2>Como executar</h2>
+        <h2>▶️ Como executar</h2>
         <pre><code>cd batimetria_kml_shape
 python -m venv .venv
 .\.venv\Scripts\Activate.ps1
@@ -113,18 +113,18 @@ python converter_linhas_batimetria.py</code></pre>
       </section>
 
       <section class="content-block">
-        <h2>Formatos de entrada</h2>
+        <h2>📂 Formatos de entrada</h2>
         <ul>
-          <li>Planilhas Excel (multi-aba, com suporte a GPS embarcado em células)</li>
-          <li>Arquivos XYZ e CSV delimitados</li>
-          <li>Logs HYPACK e arquivos de texto batimétrico</li>
-          <li>Coordenadas WGS84 ou UTM — reprojeção automática para SIRGAS 2000</li>
+          <li>📊 Planilhas Excel (multi-aba, com suporte a GPS embarcado em células)</li>
+          <li>📄 Arquivos XYZ e CSV delimitados</li>
+          <li>📝 Logs HYPACK e arquivos de texto batimétrico</li>
+          <li>🌍 Coordenadas WGS84 ou UTM — reprojeção automática para SIRGAS 2000</li>
         </ul>
       </section>
     </main>
 
     <footer class="site-footer">
-      <p><a href="index.html">← Voltar à vitrine de ferramentas</a></p>
+      <p><a href="index.html">🔙 Voltar à vitrine de ferramentas</a></p>
     </footer>
   </div>
 </body>
