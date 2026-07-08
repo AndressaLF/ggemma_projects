@@ -3,14 +3,14 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="extrator_info_files — inventário geofísico marítimo a partir de cabeçalhos de arquivo.">
+  <meta name="description" content="extrator_info_files — ferramenta de inventário geofísico marítimo a partir de cabeçalhos de arquivo (laboratório GGEMMA).">
   <title>extrator_info_files · GGEMMA</title>
   <link rel="stylesheet" href="assets/style.css">
 </head>
 <body>
   <div class="container">
     <nav class="breadcrumb">
-      <a href="index.html">← Vitrine GGEMMA</a>
+      <a href="index.html">← Vitrine de ferramentas GGEMMA</a>
     </nav>
 
     <header class="product-hero">
@@ -19,6 +19,9 @@
         <strong>Inventário inicial de campanha em minutos, não em dias</strong> —
         descubra o que há na pasta, de que tipo é cada dado geofísico e se existe
         posição no mapa, sem abrir arquivo por arquivo.
+      </p>
+      <p style="color: var(--text-muted); font-size: 0.95rem; margin: 0 0 1rem;">
+        Ferramenta de pesquisa e operação do laboratório <strong>GGEMMA</strong> para triagem de dados de campanha.
       </p>
       <div class="badge-row">
         <span class="badge live">v0.2.1</span>
@@ -74,12 +77,14 @@ python main.py banco_de_dados_treinamento/amostras_sinteticas -r</code></pre>
         <p style="color: var(--text-muted); font-size: 0.9rem; margin: 0.75rem 0 0;">
           Para sua pasta de campanha: <code>python main.py "D:\SuaPasta" -r --pdf</code>
         </p>
-        <img
-          class="demo-image"
-          src="https://raw.githubusercontent.com/AndressaLF/extrator_info_files/main/docs/images/readme_demo_tabela.png"
-          alt="Tabela colorida de inventário geofísico no terminal"
-          loading="lazy"
-        >
+        <div class="demo-image-wrap">
+          <img
+            class="demo-image"
+            src="assets/extrator_demo_tabela.svg"
+            alt="Tabela colorida de inventário geofísico no terminal"
+            loading="lazy"
+          >
+        </div>
       </section>
 
       <section class="content-block">
@@ -98,7 +103,7 @@ python main.py banco_de_dados_treinamento/amostras_sinteticas -r</code></pre>
     </main>
 
     <footer class="site-footer">
-      <p><a href="index.html">← Voltar à vitrine</a></p>
+      <p><a href="index.html">← Voltar à vitrine de ferramentas</a></p>
     </footer>
   </div>
 </body>

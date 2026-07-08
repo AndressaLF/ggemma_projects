@@ -291,11 +291,22 @@ a:hover {
   color: var(--text-muted);
 }
 
-.demo-image {
-  width: 100%;
+.demo-image-wrap {
+  margin-top: 1rem;
+  overflow-x: auto;
   border-radius: 8px;
   border: 1px solid var(--border);
-  margin-top: 1rem;
+  background: #1a1a1a;
+}
+
+.demo-image {
+  display: block;
+  width: 100%;
+  min-width: 640px;
+  height: auto;
+  border: none;
+  margin: 0;
+  border-radius: 0;
 }
 
 code,

@@ -1,11 +1,11 @@
-# GGEMMA — Vitrine de Produtos
+# GGEMMA — Vitrine de Ferramentas
 
-Site estático (GitHub Pages) que reúne os produtos e ferramentas Python desenvolvidos no ecossistema **GGEMMA**.
+Site estático (GitHub Pages) que reúne ferramentas Python desenvolvidas no **laboratório GGEMMA** para apoio a campanhas de geofísica marítima — inventário de dados, conversão batimétrica e geoprocessamento.
 
-## Produtos na vitrine
+## Ferramentas na vitrine
 
-| Produto | Página | Status |
-|---------|--------|--------|
+| Ferramenta | Página | Status |
+|------------|--------|--------|
 | **extrator_info_files** | [`docs/extrator.html`](docs/extrator.html) | Publicado no [GitHub](https://github.com/AndressaLF/extrator_info_files) |
 | **batimetria_kml_shape** | [`docs/batimetria.html`](docs/batimetria.html) | Repositório local |
 
@@ -28,13 +28,13 @@ python -m http.server 8080
    - **Branch:** `main` / **`/docs`**
 4. Aguarde alguns minutos. O site ficará em:
 
-   `https://<seu-usuario>.github.io/ggemma_projects/`
+   `https://andressalf.github.io/ggemma_projects/`
 
 O arquivo `.nojekyll` na pasta `docs/` evita que o GitHub Pages processe o site com Jekyll.
 
-## Adicionar um novo produto
+## Adicionar uma nova ferramenta
 
-1. Crie `docs/<nome-do-produto>.html` seguindo o padrão das páginas existentes.
+1. Crie `docs/<nome-da-ferramenta>.html` seguindo o padrão das páginas existentes.
 2. Adicione um card em `docs/index.html`.
 3. Atualize a tabela neste README.
 
