@@ -4,6 +4,7 @@ Thumbs.db
 *.log
 .cursor/
 .vscode/
+cursor_ggemma*
 
 # Manutenção local — não publicar (site usa só docs/)
 scripts/
