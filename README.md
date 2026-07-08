@@ -6,8 +6,8 @@ Site estático (GitHub Pages) que reúne ferramentas Python desenvolvidas no **l
 
 | Ferramenta | Página | Status |
 |------------|--------|--------|
-| **extrator_info_files** | [`docs/extrator.html`](docs/extrator.html) | Publicado no [GitHub](https://github.com/AndressaLF/extrator_info_files) |
-| **batimetria_kml_shape** | [`docs/batimetria.html`](docs/batimetria.html) | Repositório local |
+| **extrator_info_files** | [`docs/extrator.html`](docs/extrator.html) | Documentação na vitrine |
+| **batimetria_kml_shape** | [`docs/batimetria.html`](docs/batimetria.html) | Documentação na vitrine |
 
 ## Visualizar localmente
 

@@ -1,83 +1,84 @@
-<!DOCTYPE html>
-<html lang="pt-BR">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Vitrine de ferramentas Python do laboratório GGEMMA — geofísica e batimetria marítima.">
-  <title>GGEMMA — Vitrine de Ferramentas</title>
-  <link rel="stylesheet" href="assets/style.css">
-</head>
-<body>
-  <div class="container">
-    <header class="site-header">
-      <h1>🌊 GGEMMA — Vitrine de Ferramentas</h1>
-      <p class="tagline">
-        Ferramentas criadas em Python para utilização nas campanhas de coleta de dados
-        geofísicos marítimos: inventário de dados, conversão batimétrica e apoio
-        operacional ao processamento.
-      </p>
-      <div class="badge-row">
-        <span class="badge">Python</span>
-        <span class="badge">Geofísica marítima</span>
-        <span class="badge">Geoprocessamento</span>
-        <span class="badge">Dados Sísmicos</span>
-        <span class="badge">Dados Batimétricos</span>
-        <span class="badge">Dados Sonográficos</span>
-      </div>
-    </header>
-
-    <main>
-      <h2 class="section-title">Ferramentas disponíveis</h2>
-
-      <div class="product-grid">
-        <article class="product-card">
-          <div class="icon">📋</div>
-          <h2>extrator_info_files</h2>
-          <div class="meta">
-            <span class="badge live">v0.2.1 · GitHub</span>
-          </div>
-          <p>
-            Inventário de campanha em minutos: descubra tipos de dado geofísico,
-            coordenadas e estágio (bruto/processo) lendo apenas cabeçalhos — sem abrir
-            arquivo por arquivo no CARIS, HYPACK ou SonarWiz.
-          </p>
-          <div class="card-actions">
-            <a class="btn btn-primary" href="extrator.html">Ver ferramenta</a>
-            <a class="btn btn-ghost" href="https://github.com/AndressaLF/extrator_info_files" target="_blank" rel="noopener">GitHub ↗</a>
-          </div>
-        </article>
-
-        <article class="product-card">
-          <div class="icon">🗺️</div>
-          <h2>batimetria_kml_shape</h2>
-          <div class="meta">
-            <span class="badge local">Repositório local</span>
-          </div>
-          <p>
-            Suite de conversores batimétricos: gera contornos de área (CA), linhas de
-            navegação (L) e shapefiles a partir de CSV, XYZ, Excel e LOG — com detecção
-            inteligente de áreas desconectadas e filtros de qualidade.
-          </p>
-          <div class="card-actions">
-            <a class="btn btn-primary" href="batimetria.html">Ver ferramenta</a>
-          </div>
-        </article>
-      </div>
-
-      <section class="content-block">
-        <h2>Sobre esta vitrine</h2>
-        <p style="margin: 0; color: var(--text-muted);">
-          Este site reúne ferramentas desenvolvidas no contexto do laboratório <strong>GGEMMA</strong>.
-          Cada card leva a uma página com casos de uso, módulos incluídos e
-          instruções de execução. Novas ferramentas serão adicionadas conforme forem
-          criadas ou documentadas.
-        </p>
-      </section>
-    </main>
-
-    <footer class="site-footer">
-      <p>GGEMMA · Vitrine de ferramentas · Atualizado em julho/2026</p>
-    </footer>
-  </div>
-</body>
-</html>
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Vitrine de ferramentas Python do laboratório GGEMMA — geofísica e batimetria marítima.">
+  <title>GGEMMA — Vitrine de Ferramentas</title>
+  <link rel="stylesheet" href="assets/style.css">
+</head>
+<body>
+  <div class="container">
+    <header class="site-header">
+      <h1>🌊 GGEMMA — Vitrine de Ferramentas</h1>
+      <p class="tagline">
+        Ferramentas criadas em Python para utilização nas campanhas de coleta de dados
+        geofísicos marítimos: inventário de dados, conversão batimétrica e apoio
+        operacional ao processamento.
+      </p>
+      <div class="badge-row">
+        <span class="badge">Python</span>
+        <span class="badge">Geofísica marítima</span>
+        <span class="badge">Geoprocessamento</span>
+        <span class="badge">Dados Sísmicos</span>
+        <span class="badge">Dados Batimétricos</span>
+        <span class="badge">Dados Sonográficos</span>
+      </div>
+    </header>
+
+    <main>
+      <h2 class="section-title">Ferramentas disponíveis</h2>
+
+      <div class="product-grid">
+        <article class="product-card">
+          <div class="icon">📋</div>
+          <h2>extrator_info_files</h2>
+          <div class="meta">
+            <span class="badge live">Inventário de campanha</span>
+          </div>
+          <p>
+            Chegou um HD ou pasta de campanha e você precisa saber o que há dentro
+            antes de abrir tudo no software de processamento? Em poucos minutos, a
+            ferramenta varre os arquivos e resume tipos de dado, presença de
+            coordenadas e estágio (bruto ou processado) — sem abrir arquivo por arquivo.
+          </p>
+          <div class="card-actions">
+            <a class="btn btn-primary" href="extrator.html">Ver ferramenta</a>
+          </div>
+        </article>
+
+        <article class="product-card">
+          <div class="icon">🗺️</div>
+          <h2>batimetria_kml_shape</h2>
+          <div class="meta">
+            <span class="badge">Conversão batimétrica</span>
+          </div>
+          <p>
+            Levantamentos batimétricos em planilhas, textos e logs de formatos
+            diferentes? A ferramenta gera shapefiles prontos para o GIS, com a
+            extensão real de cada área de levantamento — útil para visualizar,
+            conferir entregas e apoiar o processamento.
+          </p>
+          <div class="card-actions">
+            <a class="btn btn-primary" href="batimetria.html">Ver ferramenta</a>
+          </div>
+        </article>
+      </div>
+
+      <section class="content-block">
+        <h2>Sobre esta vitrine</h2>
+        <p style="margin: 0; color: var(--text-muted);">
+          Este site apresenta ferramentas desenvolvidas no <strong>laboratório GGEMMA</strong>
+          para apoiar pesquisa e operação em campanhas geofísicas marítimas. Cada card
+          leva a uma página com visão geral, exemplos e orientações de uso. Novas
+          ferramentas serão incluídas conforme forem criadas ou documentadas.
+        </p>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <p>GGEMMA · Vitrine de ferramentas · Atualizado em julho/2026</p>
+    </footer>
+  </div>
+</body>
+</html>
