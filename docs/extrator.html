@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="extrator_info_files — inventário geofísico marítimo a partir de cabeçalhos de arquivo.">
+  <title>extrator_info_files · GGEMMA</title>
+  <link rel="stylesheet" href="assets/style.css">
+</head>
+<body>
+  <div class="container">
+    <nav class="breadcrumb">
+      <a href="index.html">← Vitrine GGEMMA</a>
+    </nav>
+
+    <header class="product-hero">
+      <h1>📋 extrator_info_files</h1>
+      <p class="lead">
+        <strong>Inventário inicial de campanha em minutos, não em dias</strong> —
+        descubra o que há na pasta, de que tipo é cada dado geofísico e se existe
+        posição no mapa, sem abrir arquivo por arquivo.
+      </p>
+      <div class="badge-row">
+        <span class="badge live">v0.2.1</span>
+        <span class="badge">Open source</span>
+        <span class="badge">100% local</span>
+      </div>
+    </header>
+
+    <main>
+      <section class="content-block">
+        <h2>Antes e depois</h2>
+        <div class="feature-grid">
+          <div class="feature">
+            <h3>Antes (manual)</h3>
+            <p>Abrir cada arquivo no software de processamento; horas ou dias para inventariar um HD.</p>
+          </div>
+          <div class="feature">
+            <h3>Depois (extrator)</h3>
+            <p>Uma varredura na pasta inteira; tabela com tipo, estágio e coordenadas em minutos.</p>
+          </div>
+        </div>
+      </section>
+
+      <section class="content-block">
+        <h2>Para quem é</h2>
+        <ul>
+          <li><strong>Operacional / processamento</strong> — saber o que importar primeiro ao receber um HD de campanha</li>
+          <li><strong>QA / entrega / gestão</strong> — conferir tipos esperados, GPS presente, pares <code>.all</code>/<code>.wcd</code></li>
+          <li><strong>TI / geoprocessamento</strong> — código modular, amostras sintéticas e testes automatizados</li>
+        </ul>
+      </section>
+
+      <section class="content-block">
+        <h2>Formatos suportados (v1)</h2>
+        <ul>
+          <li>HYPACK (<code>.raw</code>, <code>.hsx</code>)</li>
+          <li>Kongsberg EM (<code>.all</code>, <code>.wcd</code>)</li>
+          <li>EdgeTech XTF / JSF (<code>.xtf</code>, <code>.jsf</code>)</li>
+          <li>CARIS / SES (<code>.raw</code> SFD)</li>
+          <li>Surfer grids (<code>.rsw</code>, <code>.grd</code>)</li>
+          <li>E classificação genérica para extensões desconhecidas</li>
+        </ul>
+      </section>
+
+      <section class="content-block">
+        <h2>Demo em 30 segundos</h2>
+        <pre><code>git clone https://github.com/AndressaLF/extrator_info_files.git
+cd extrator_info_files
+python -m venv .venv
+.\.venv\Scripts\Activate.ps1
+pip install -e .
+python main.py banco_de_dados_treinamento/amostras_sinteticas -r</code></pre>
+        <p style="color: var(--text-muted); font-size: 0.9rem; margin: 0.75rem 0 0;">
+          Para sua pasta de campanha: <code>python main.py "D:\SuaPasta" -r --pdf</code>
+        </p>
+        <img
+          class="demo-image"
+          src="https://raw.githubusercontent.com/AndressaLF/extrator_info_files/main/docs/images/readme_demo_tabela.png"
+          alt="Tabela colorida de inventário geofísico no terminal"
+          loading="lazy"
+        >
+      </section>
+
+      <section class="content-block">
+        <h2>Exportações</h2>
+        <ul>
+          <li>Tabela colorida no terminal (<code>-r</code>)</li>
+          <li>Relatório PDF formal (<code>--pdf</code>)</li>
+          <li>CSV e JSON estruturado com <code>schema_version</code> para pipelines</li>
+          <li>Modo strict para QA automatizado (<code>--strict</code>)</li>
+        </ul>
+        <div class="card-actions" style="margin-top: 1rem;">
+          <a class="btn btn-primary" href="https://github.com/AndressaLF/extrator_info_files" target="_blank" rel="noopener">Repositório no GitHub ↗</a>
+          <a class="btn btn-ghost" href="https://github.com/AndressaLF/extrator_info_files/blob/main/README.en.md" target="_blank" rel="noopener">README em inglês ↗</a>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <p><a href="index.html">← Voltar à vitrine</a></p>
+    </footer>
+  </div>
+</body>
+</html>

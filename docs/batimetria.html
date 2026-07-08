@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="batimetria_kml_shape — conversores de levantamentos batimétricos para shapefile e KML.">
+  <title>batimetria_kml_shape · GGEMMA</title>
+  <link rel="stylesheet" href="assets/style.css">
+</head>
+<body>
+  <div class="container">
+    <nav class="breadcrumb">
+      <a href="index.html">← Vitrine GGEMMA</a>
+    </nav>
+
+    <header class="product-hero">
+      <h1>🗺️ batimetria_kml_shape</h1>
+      <p class="lead">
+        Suite de conversores Python para transformar levantamentos batimétricos
+        (CSV, TXT, XYZ, Excel, LOG) em <strong>shapefiles</strong> prontos para GIS —
+        contornos de área, linhas de navegação e exportação em SIRGAS 2000 UTM.
+      </p>
+      <div class="badge-row">
+        <span class="badge local">Repositório local</span>
+        <span class="badge">SIRGAS 2000 UTM</span>
+        <span class="badge">tkinter GUI</span>
+      </div>
+    </header>
+
+    <main>
+      <section class="content-block">
+        <h2>Problema que resolve</h2>
+        <p style="margin: 0; color: var(--text-muted);">
+          Levantamentos batimétricos chegam em planilhas, arquivos de texto e logs
+          heterogêneos. Antes de usar no QGIS ou ArcGIS, é preciso gerar geometrias
+          confiáveis — sem juntar áreas desconectadas, sem duplicar arquivos idênticos
+          e com filtros de qualidade por profundidade e coordenadas.
+        </p>
+      </section>
+
+      <section class="content-block">
+        <h2>Ferramentas incluídas</h2>
+        <ul class="tool-list">
+          <li>
+            <span class="tool-name">converter_shapefile_batimetria.py</span>
+            <span class="tool-version">v1.8.0 · Contornos batimétricos</span>
+            <span class="tool-desc">
+              Gera polígonos de área (<code>CA_&lt;arquivo&gt;_&lt;pasta&gt;.shp</code>) e linhas
+              de navegação (<code>L_...</code>). Detecta áreas espacialmente desconectadas,
+              deduplica conteúdo equivalente e aplica envoltória côncava por área.
+            </span>
+          </li>
+          <li>
+            <span class="tool-name">converter_linhas_batimetria.py</span>
+            <span class="tool-version">v1.0.1 · Linhas batimétricas</span>
+            <span class="tool-desc">
+              Exporta apenas linhas de navegação (LineString) — um shapefile por arquivo
+              de origem, sem polígonos de área.
+            </span>
+          </li>
+          <li>
+            <span class="tool-name">converter_batimetria2.py</span>
+            <span class="tool-version">v1.6.0 · Motor de leitura</span>
+            <span class="tool-desc">
+              Biblioteca compartilhada: leitura multi-formato, filtros geográficos,
+              agrupamento por trilha, fingerprint para deduplicação e conversão para KML.
+            </span>
+          </li>
+        </ul>
+      </section>
+
+      <section class="content-block">
+        <h2>Inteligência implementada</h2>
+        <div class="feature-grid">
+          <div class="feature">
+            <h3>Áreas desconectadas</h3>
+            <p>Grade UTM adaptativa separa múltiplas áreas no mesmo arquivo (ex.: Leplac Amapá).</p>
+          </div>
+          <div class="feature">
+            <h3>Deduplicação</h3>
+            <p>Fingerprint normalizado ignora arquivos com conteúdo batimétrico equivalente.</p>
+          </div>
+          <div class="feature">
+            <h3>Trilhas OBS</h3>
+            <p>Agrupamento por trilha de observação gera polígonos/linhas por passagem.</p>
+          </div>
+          <div class="feature">
+            <h3>Filtros de qualidade</h3>
+            <p>Outliers, profundidade inválida e pontos fora do Brasil são descartados.</p>
+          </div>
+        </div>
+      </section>
+
+      <section class="content-block">
+        <h2>Como executar</h2>
+        <pre><code>cd batimetria_kml_shape
+python -m venv .venv
+.\.venv\Scripts\Activate.ps1
+pip install -r requirements.txt
+
+# Contornos + linhas (diálogo de pasta)
+python converter_shapefile_batimetria.py
+
+# Apenas linhas de navegação
+python converter_linhas_batimetria.py</code></pre>
+        <p style="color: var(--text-muted); font-size: 0.9rem; margin: 0.75rem 0 0;">
+          Entrada: pasta com CSV, TXT, XYZ, XLS, XLSX ou LOG. Saída: shapefiles
+          <code>CA_*</code> e <code>L_*</code> na mesma pasta selecionada.
+        </p>
+      </section>
+
+      <section class="content-block">
+        <h2>Formatos de entrada</h2>
+        <ul>
+          <li>Planilhas Excel (multi-aba, com suporte a GPS embarcado em células)</li>
+          <li>Arquivos XYZ e CSV delimitados</li>
+          <li>Logs HYPACK e arquivos de texto batimétrico</li>
+          <li>Coordenadas WGS84 ou UTM — reprojeção automática para SIRGAS 2000</li>
+        </ul>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <p><a href="index.html">← Voltar à vitrine</a></p>
+    </footer>
+  </div>
+</body>
+</html>
