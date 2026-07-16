@@ -1,10 +1,52 @@
+# =============================================================================
+# ggemma_projects — .gitignore
+# Site público = só docs/ genéricos. Sem handles, e-mails, paths, campanhas.
+# Ver: docs/privacidade.md
+# =============================================================================
+
 # IDE / SO
 .DS_Store
 Thumbs.db
+Desktop.ini
 *.log
 .cursor/
 .vscode/
-cursor_ggemma*
+.idea/
+
+# Transcripts / notas de sessão (e-mail, paths, handles, histórico)
+cursor_*.md
+**/cursor_*.md
+cursor_agent_*.md
+**/agent-transcripts/
+*.code-workspace
+
+# Segredos / overrides locais
+.env
+.env.*
+!.env.example
+*.local.toml
+*.local.json
+*.pem
+*.key
+secrets/
+credentials*
 
 # Manutenção local — não publicar (site usa só docs/)
 scripts/
+.git-hooks/
+*.git-hooks/
+
+# Artefatos acidentais / demos locais
+__pycache__/
+.venv/
+venv/
+relatorio_*.pdf
+relatorio_*.csv
+relatorio_*.json
+organize_manifest.json
+**/Extrator_Organizer/
+
+# Pastas/paths quebrados acidentais na raiz
+/C*/
+/Lima/
+/Lima.*/

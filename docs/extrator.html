@@ -3,31 +3,32 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="extrator_info_files — triagem rápida de dados de campanha geofísica marítima (laboratório GGEMMA).">
-  <title>extrator_info_files · GGEMMA</title>
+  <meta name="description" content="extrator_info_files — inventário e organização de pasta de campanha geofísica marítima.">
+  <title>extrator_info_files</title>
   <link rel="stylesheet" href="assets/style.css">
 </head>
 <body>
   <div class="container">
     <nav class="breadcrumb">
-      <a href="index.html">🌊 ← Vitrine de ferramentas GGEMMA</a>
+      <a href="index.html">🌊 ← Voltar à vitrine</a>
     </nav>
 
     <header class="product-hero">
       <h1>📋 extrator_info_files</h1>
       <p class="lead">
         <strong>Saiba o que há na pasta de campanha antes de abrir cada arquivo.</strong>
-        A ferramenta analisa o conteúdo recebido e devolve um panorama organizado:
-        que tipos de dado existem, se há informação de posição e em que estágio
-        se encontram — tudo em uma única passagem pela pasta.
+        Inventaria tipos de dado geofísico, presença de coordenadas e estágio
+        (bruto / processado / auxiliar). Também exporta PDF, CSV e JSON e pode
+        <strong>reorganizar o acervo</strong> em pastas padronizadas.
       </p>
       <p style="color: var(--text-muted); font-size: 0.95rem; margin: 0 0 1rem;">
-        Desenvolvida no <strong>laboratório GGEMMA</strong> para apoiar pesquisa e
-        operação em campanhas de geofísica marítima. Processamento 100% local.
+        Status atual: <strong>v0.2.1</strong>.
+        Processamento 100% local — lê só cabeçalhos e amostras (~2&nbsp;MB/arquivo).
       </p>
       <div class="badge-row">
-        <span class="badge live">🔍 Triagem de campanha</span>
-        <span class="badge">🌊 Geofísica marítima</span>
+        <span class="badge live">🔍 Inventário de campanha</span>
+        <span class="badge">📄 PDF / CSV / JSON</span>
+        <span class="badge">📁 organize</span>
         <span class="badge">🔒 100% local</span>
       </div>
     </header>
@@ -38,30 +39,51 @@
         <div class="feature-grid">
           <div class="feature">
             <h3>📦 A situação comum</h3>
-            <p>Um HD ou pacote de entrega chega com centenas de arquivos, formatos misturados e pouca documentação sobre o que importar primeiro.</p>
+            <p>
+              Um HD chega com centenas de arquivos (XTF, ALL, JSF, SEG-Y, Surfer, GeoTIFF…)
+              misturados com PDFs e fotos — e ninguém sabe o que importar primeiro.
+            </p>
           </div>
           <div class="feature">
             <h3>✨ Com o extrator</h3>
-            <p>Você obtém uma visão consolidada do acervo — o suficiente para orientar importação, conferência de entrega ou planejamento do processamento.</p>
+            <p>
+              Tabela colorida no terminal + relatórios opcionais. Em seguida, o comando
+              <code>organize</code> copia (ou move) para pastas em inglês por método e ano.
+            </p>
           </div>
         </div>
       </section>
 
       <section class="content-block">
-        <h2>👥 Para quem é</h2>
-        <ul>
-          <li>⚙️ <strong>Equipe de processamento</strong> — priorizar o que abrir ao receber uma campanha</li>
-          <li>✅ <strong>QA e gestão de entregas</strong> — conferir se o pacote contém o esperado</li>
-          <li>🔬 <strong>Pesquisa e geoprocessamento</strong> — ganhar tempo na primeira análise de grandes volumes de dados</li>
+        <h2>🧰 Dois modos de uso</h2>
+        <ul class="tool-list">
+          <li>
+            <span class="tool-name">📋 Inventário — python main.py PASTA</span>
+            <span class="tool-version">Só leitura</span>
+            <span class="tool-desc">
+              Classifica formatos geofísicos (HYPACK, Kongsberg, XTF, EdgeTech, Surfer,
+              SEG-Y, GeoTIFF…). Flags: <code>-r</code>, <code>--pdf</code>, <code>--csv</code>,
+              <code>--json</code>, <code>--strict</code>.
+            </span>
+          </li>
+          <li>
+            <span class="tool-name">📁 Organizar — python main.py organize PASTA</span>
+            <span class="tool-version">Dry-run por padrão</span>
+            <span class="tool-desc">
+              Saída padrão: <code>&lt;entrada&gt;/Extrator_Organizer/</code> com
+              <code>bathymetry</code>, <code>seismic</code>, <code>documents</code>,
+              <code>images</code>, <code>spreadsheets</code> e <code>desconhecido</code>.
+              Use <code>--execute</code> para copiar de fato.
+            </span>
+          </li>
         </ul>
       </section>
 
       <section class="content-block">
         <h2>👁️ Como fica na prática</h2>
         <p style="margin: 0 0 1rem; color: var(--text-muted);">
-          Apontada para uma pasta de campanha, a ferramenta gera uma tabela resumida
-          no terminal — tipos de dado, coordenadas e status de leitura em um só lugar.
-          Também é possível exportar relatórios para documentação ou fluxos internos.
+          Apontada para uma pasta, a ferramenta gera uma tabela resumida no terminal —
+          tipos, coordenadas e status. Também é possível exportar relatórios formais.
         </p>
         <div class="demo-image-wrap">
           <img
@@ -75,10 +97,49 @@
           📊 Exemplo com amostras sintéticas de demonstração.
         </p>
       </section>
+
+      <section class="content-block">
+        <h2>▶️ Como começar</h2>
+        <pre><code>cd extrator_info_files
+python -m venv .venv
+.\.venv\Scripts\Activate.ps1
+pip install -r requirements.txt
+
+# Inventário (demo do repositório)
+python main.py banco_de_dados_treinamento/amostras_sinteticas -r
+
+# Sua campanha + PDF
+python main.py "D:\Campanha" -r --pdf
+
+# Organizar (plano → Extrator_Organizer)
+python main.py organize "D:\Campanha" -r
+python main.py organize "D:\Campanha" -r --execute</code></pre>
+        <p style="color: var(--text-muted); font-size: 0.9rem; margin: 0.75rem 0 0;">
+          Guia detalhado de cada comando: <code>docs/comandos.md</code> no repositório.
+        </p>
+      </section>
+
+      <section class="content-block">
+        <h2>📚 Documentação online (GitHub Pages)</h2>
+        <p style="margin: 0; color: var(--text-muted);">
+          Quando o Pages do repositório estiver ativo:
+          <code>https://&lt;OWNER&gt;.github.io/extrator_info_files/</code>
+          — guia de comandos também em <code>docs/comandos.md</code> no repositório.
+        </p>
+      </section>
+
+      <section class="content-block">
+        <h2>👥 Para quem é</h2>
+        <ul>
+          <li>⚙️ <strong>Equipe de processamento</strong> — priorizar o que abrir ao receber uma campanha</li>
+          <li>✅ <strong>QA e gestão de entregas</strong> — conferir tipos, GPS e organizar o acervo</li>
+          <li>🔬 <strong>Pesquisa e geoprocessamento</strong> — inventário rápido + export JSON/CSV</li>
+        </ul>
+      </section>
     </main>
 
     <footer class="site-footer">
-      <p><a href="index.html">🔙 Voltar à vitrine de ferramentas</a></p>
+      <p><a href="index.html">🔙 Voltar à vitrine</a></p>
     </footer>
   </div>
 </body>

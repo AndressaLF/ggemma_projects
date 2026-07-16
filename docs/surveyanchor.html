@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="SurveyAnchor — ancora levantamentos batimétricos de campo à localização geográfica.">
+  <title>SurveyAnchor</title>
+  <link rel="stylesheet" href="assets/style.css">
+</head>
+<body>
+  <div class="container">
+    <nav class="breadcrumb">
+      <a href="index.html">🌊 ← Voltar à vitrine</a>
+    </nav>
+
+    <header class="product-hero">
+      <h1>⚓ SurveyAnchor</h1>
+      <p class="lead">
+        <strong>Ancore levantamentos de campo à sua localização geográfica.</strong>
+        Lê planilhas, textos, logs e outros formatos batimétricos, reconhece
+        automaticamente o layout e o sistema de coordenadas, e exporta um
+        <strong>KML enxuto</strong> (e shapefiles opcionais) para consultar no Google Earth —
+        sem software GIS proprietário.
+      </p>
+      <p style="color: var(--text-muted); font-size: 0.95rem; margin: 0 0 1rem;">
+        Status atual: <strong>v0.7.3</strong> (alpha em calibração).
+        Processamento 100% local.
+      </p>
+      <div class="badge-row">
+        <span class="badge live">📍 Geolocalização batimétrica</span>
+        <span class="badge">🗺️ KML / SHP</span>
+        <span class="badge">🔒 100% local</span>
+        <span class="badge">📚 Docs online</span>
+      </div>
+    </header>
+
+    <main>
+      <section class="content-block">
+        <h2>🎯 O que ela resolve</h2>
+        <div class="feature-grid">
+          <div class="feature">
+            <h3>📦 A situação comum</h3>
+            <p>
+              Acervos batimétricos chegam misturados (Excel, TXT, LOG, NMEA, BAG…)
+              sem documentação clara de coluna, CRS ou área. A pergunta básica fica:
+              <em>onde exatamente aconteceu este levantamento?</em>
+            </p>
+          </div>
+          <div class="feature">
+            <h3>✨ Com o SurveyAnchor</h3>
+            <p>
+              O motor identifica formato e coordenadas, limpa outliers e entrega
+              posição geográfica consultável — KML amostrado (~2.500 pontos) e,
+              se quiser, contornos e linhas em shapefile.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <section class="content-block">
+        <h2>🧰 Comandos principais (CLI)</h2>
+        <ul class="tool-list">
+          <li>
+            <span class="tool-name">🎯 surveyanchor export-kml</span>
+            <span class="tool-version">KML enxuto</span>
+            <span class="tool-desc">
+              Abre seletor de pasta e gera <code>*.kml</code> com pontos amostrados
+              e profundidade — ideal para confirmar a área no Google Earth.
+            </span>
+          </li>
+          <li>
+            <span class="tool-name">📐 surveyanchor export-shp-contours</span>
+            <span class="tool-version">Contornos + linhas</span>
+            <span class="tool-desc">
+              Shapefiles <code>CA_*.shp</code> (área) e <code>L_*.shp</code> (navegação).
+            </span>
+          </li>
+          <li>
+            <span class="tool-name">〰️ surveyanchor export-shp-lines</span>
+            <span class="tool-version">Só linhas</span>
+            <span class="tool-desc">Exporta apenas linhas de navegação (LineString).</span>
+          </li>
+          <li>
+            <span class="tool-name">📋 surveyanchor catalog -i PASTA</span>
+            <span class="tool-version">Catálogo</span>
+            <span class="tool-desc">
+              Inventário tabular (CSV / JSON / SQLite) dos arquivos reconhecidos.
+            </span>
+          </li>
+          <li>
+            <span class="tool-name">📁 surveyanchor organize -i PASTA</span>
+            <span class="tool-version">Organizar acervo</span>
+            <span class="tool-desc">
+              Dry-run por padrão; com <code>--execute</code> reorganiza cópias por ano.
+            </span>
+          </li>
+        </ul>
+      </section>
+
+      <section class="content-block">
+        <h2>📂 Formatos (resumo)</h2>
+        <p style="margin: 0 0 0.75rem; color: var(--text-muted);">
+          Texto tabular, NMEA, Excel multi-aba, grades BAG, nuvens LAS, rasters GeoTIFF
+          e parsers leves de multibeam (GSF, XTF, KMALL), entre outros — em calibração contínua.
+        </p>
+        <ul>
+          <li>📊 Planilhas e TXT/XYZ/CSV com coordenadas + profundidade</li>
+          <li>📡 Logs NMEA / ecosonda</li>
+          <li>🗺️ BAG, GeoTIFF, LAS e formatos de campo adicionais</li>
+        </ul>
+      </section>
+
+      <section class="content-block">
+        <h2>▶️ Como começar</h2>
+        <pre><code>cd surveyanchor
+python -m venv .venv
+.\.venv\Scripts\Activate.ps1
+pip install -e .
+
+surveyanchor export-kml -r
+surveyanchor catalog -i "D:\Levantamentos" -o "D:\Saida\catalogo" -r</code></pre>
+        <p style="color: var(--text-muted); font-size: 0.9rem; margin: 0.75rem 0 0;">
+          Referência completa de flags:
+          <code>docs/12-comandos-cli.md</code> no repositório.
+        </p>
+      </section>
+
+      <section class="content-block">
+        <h2>📚 Documentação online (GitHub Pages)</h2>
+        <p style="margin: 0; color: var(--text-muted);">
+          Site MkDocs Material (PT + landing EN), quando Pages estiver ativo:
+          <code>https://&lt;OWNER&gt;.github.io/SurveyAnchor/</code>
+          · landing EN:
+          <code>…/en/</code>
+        </p>
+      </section>
+
+      <section class="content-block">
+        <h2>👥 Para quem é</h2>
+        <ul>
+          <li>⚙️ <strong>Processamento / operação</strong> — localizar rápido onde cada arquivo “cai” no mapa</li>
+          <li>✅ <strong>QA e entrega</strong> — conferir extensão espacial sem abrir GIS pesado</li>
+          <li>🔬 <strong>Pesquisa</strong> — catálogo e KML a partir de acervos heterogêneos</li>
+        </ul>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <p><a href="index.html">🔙 Voltar à vitrine</a></p>
+    </footer>
+  </div>
+</body>
+</html>

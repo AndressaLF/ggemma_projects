@@ -3,128 +3,144 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="batimetria_kml_shape — ferramenta de conversão batimétrica para shapefile e KML (laboratório GGEMMA).">
-  <title>batimetria_kml_shape · GGEMMA</title>
+  <meta name="description" content="batimetria_kml_shape — transforme planilhas de batimetria em mapa (KML e shapefile) para Google Earth e QGIS.">
+  <title>batimetria_kml_shape · catálogo</title>
   <link rel="stylesheet" href="assets/style.css">
 </head>
 <body>
   <div class="container">
     <nav class="breadcrumb">
-      <a href="index.html">🌊 ← Vitrine de ferramentas GGEMMA</a>
+      <a href="index.html">🌊 ← Voltar à vitrine</a>
     </nav>
 
     <header class="product-hero">
       <h1>🗺️ batimetria_kml_shape</h1>
       <p class="lead">
-        Suite de conversores Python para transformar levantamentos batimétricos
-        (CSV, TXT, XYZ, Excel, LOG) em <strong>shapefiles</strong> prontos para GIS —
-        contornos de área, linhas de navegação e exportação em SIRGAS 2000 UTM.
+        <strong>Você tem profundidade + coordenadas numa planilha… e quer ver isso no mapa.</strong>
+        Esta ferramenta lê a pasta, entende o arquivo e gera
+        <strong>KML</strong> (Google Earth) ou <strong>shapefile</strong> (QGIS) —
+        sem montar o mapa na mão.
       </p>
       <p style="color: var(--text-muted); font-size: 0.95rem; margin: 0 0 1rem;">
-        Ferramenta de conversão batimétrica desenvolvida no laboratório <strong>GGEMMA</strong>.
+        Em uma frase: <strong>arquivo chato → desenho no mapa</strong>.
+        Roda 100% no seu computador.
       </p>
       <div class="badge-row">
-        <span class="badge">🗺️ Conversão batimétrica</span>
-        <span class="badge">📍 SIRGAS 2000 UTM</span>
-        <span class="badge">🖥️ Interface gráfica</span>
+        <span class="badge live">🌍 KML</span>
+        <span class="badge">📐 Shapefile</span>
+        <span class="badge">🖱️ Escolhe a pasta na janela</span>
+        <span class="badge">🔒 Offline</span>
       </div>
     </header>
 
     <main>
       <section class="content-block">
-        <h2>🎯 Problema que resolve</h2>
-        <p style="margin: 0; color: var(--text-muted);">
-          Levantamentos batimétricos chegam em planilhas, arquivos de texto e logs
-          heterogêneos. Antes de usar no QGIS ou ArcGIS, é preciso gerar geometrias
-          confiáveis — sem juntar áreas desconectadas, sem duplicar arquivos idênticos
-          e com filtros de qualidade por profundidade e coordenadas.
-        </p>
-      </section>
-
-      <section class="content-block">
-        <h2>🧰 Ferramentas incluídas</h2>
-        <ul class="tool-list">
-          <li>
-            <span class="tool-name">📐 converter_shapefile_batimetria.py</span>
-            <span class="tool-version">v1.8.0 · Contornos batimétricos</span>
-            <span class="tool-desc">
-              Gera polígonos de área (<code>CA_&lt;arquivo&gt;_&lt;pasta&gt;.shp</code>) e linhas
-              de navegação (<code>L_...</code>). Detecta áreas espacialmente desconectadas,
-              deduplica conteúdo equivalente e aplica envoltória côncava por área.
-            </span>
-          </li>
-          <li>
-            <span class="tool-name">〰️ converter_linhas_batimetria.py</span>
-            <span class="tool-version">v1.0.1 · Linhas batimétricas</span>
-            <span class="tool-desc">
-              Exporta apenas linhas de navegação (LineString) — um shapefile por arquivo
-              de origem, sem polígonos de área.
-            </span>
-          </li>
-          <li>
-            <span class="tool-name">⚙️ converter_batimetria2.py</span>
-            <span class="tool-version">v1.6.0 · Motor de leitura</span>
-            <span class="tool-desc">
-              Biblioteca compartilhada: leitura multi-formato, filtros geográficos,
-              agrupamento por trilha, fingerprint para deduplicação e conversão para KML.
-            </span>
-          </li>
-        </ul>
-      </section>
-
-      <section class="content-block">
-        <h2>🧠 Recursos principais</h2>
+        <h2>😫 O problema (sem enrolação)</h2>
         <div class="feature-grid">
           <div class="feature">
-            <h3>🗺️ Áreas desconectadas</h3>
-            <p>Grade UTM adaptativa separa múltiplas áreas no mesmo arquivo (ex.: Leplac Amapá).</p>
+            <h3>📦 O que chega</h3>
+            <p>
+              Excel, CSV, TXT, XYZ, log… cada um de um jeito. Colunas sem nome claro.
+              Às vezes UTM, às vezes graus. Abrir ponto a ponto no Excel não mostra a área.
+            </p>
           </div>
           <div class="feature">
-            <h3>🔄 Deduplicação</h3>
-            <p>Fingerprint normalizado ignora arquivos com conteúdo batimétrico equivalente.</p>
-          </div>
-          <div class="feature">
-            <h3>🛤️ Trilhas OBS</h3>
-            <p>Agrupamento por trilha de observação gera polígonos/linhas por passagem.</p>
-          </div>
-          <div class="feature">
-            <h3>✅ Filtros de qualidade</h3>
-            <p>Outliers, profundidade inválida e pontos fora do Brasil são descartados.</p>
+            <h3>✨ O que o programa faz</h3>
+            <p>
+              Lê a pasta, tenta achar coordenadas e profundidade, limpa pontos estranhos
+              e entrega arquivos prontos para abrir no mapa.
+            </p>
           </div>
         </div>
       </section>
 
       <section class="content-block">
-        <h2>▶️ Como executar</h2>
+        <h2>🧰 Três produtos (escolha o que precisa)</h2>
+        <ul class="tool-list">
+          <li>
+            <span class="tool-name">🌍 Conversor KML</span>
+            <span class="tool-version">converter_batimetria2.py</span>
+            <span class="tool-desc">
+              “Só quero ver no Google Earth hoje.” Gera <code>.kml</code> para conferência rápida.
+            </span>
+          </li>
+          <li>
+            <span class="tool-name">📐 Contornos + linhas</span>
+            <span class="tool-version">converter_shapefile_batimetria.py · v1.8.0</span>
+            <span class="tool-desc">
+              “Preciso entregar para o QGIS.” Gera área (<code>CA_…</code>) e trajeto (<code>L_…</code>).
+              Separa pedaços longe um do outro no mesmo arquivo.
+            </span>
+          </li>
+          <li>
+            <span class="tool-name">〰️ Só linhas</span>
+            <span class="tool-version">converter_linhas_batimetria.py · v1.0.1</span>
+            <span class="tool-desc">
+              “Só o caminho da embarcação.” Exporta apenas linhas de navegação.
+            </span>
+          </li>
+        </ul>
+      </section>
+
+      <section class="content-block">
+        <h2>✨ O que você ganha na prática</h2>
+        <div class="feature-grid">
+          <div class="feature">
+            <h3>🌍 Ver no Google Earth</h3>
+            <p>Arquivo KML para abrir e checar se a área “cai” no lugar certo.</p>
+          </div>
+          <div class="feature">
+            <h3>📐 Usar no QGIS</h3>
+            <p>Shapefile de área e/ou linha, no padrão de mapa usado em muitos trabalhos no Brasil.</p>
+          </div>
+          <div class="feature">
+            <h3>🧹 Limpeza automática</h3>
+            <p>Tenta tirar profundidade inválida e pontos fora do esperado — menos mapa “quebrado”.</p>
+          </div>
+          <div class="feature">
+            <h3>🖱️ Sem digitar caminho</h3>
+            <p>Abre uma janela, você escolhe a pasta com o mouse e pronto.</p>
+          </div>
+        </div>
+      </section>
+
+      <section class="content-block">
+        <h2>▶️ Como começar (bem direto)</h2>
         <pre><code>cd batimetria_kml_shape
 python -m venv .venv
 .\.venv\Scripts\Activate.ps1
 pip install -r requirements.txt
 
-# Contornos + linhas (diálogo de pasta)
-python converter_shapefile_batimetria.py
-
-# Apenas linhas de navegação
-python converter_linhas_batimetria.py</code></pre>
+python converter_batimetria2.py              # KML
+python converter_shapefile_batimetria.py     # área + linha
+python converter_linhas_batimetria.py        # só linha</code></pre>
         <p style="color: var(--text-muted); font-size: 0.9rem; margin: 0.75rem 0 0;">
-          Entrada: pasta com CSV, TXT, XYZ, XLS, XLSX ou LOG. Saída: shapefiles
-          <code>CA_*</code> e <code>L_*</code> na mesma pasta selecionada.
+          Entrada: pasta com CSV, TXT, XYZ, Excel ou LOG.
+          Saída: na <strong>mesma pasta</strong> que você escolheu.
         </p>
       </section>
 
       <section class="content-block">
-        <h2>📂 Formatos de entrada</h2>
+        <h2>❓ Em 10 segundos</h2>
         <ul>
-          <li>📊 Planilhas Excel (multi-aba, com suporte a GPS embarcado em células)</li>
-          <li>📄 Arquivos XYZ e CSV delimitados</li>
-          <li>📝 Logs HYPACK e arquivos de texto batimétrico</li>
-          <li>🌍 Coordenadas WGS84 ou UTM — reprojeção automática para SIRGAS 2000</li>
+          <li>❓ Preciso ser programador? → Só instalar Python e rodar um comando.</li>
+          <li>🔒 Meus dados sobem para a nuvem? → Não. Tudo local.</li>
+          <li>🗺️ Substitui o QGIS? → Não. Prepara o arquivo para você abrir lá.</li>
         </ul>
+      </section>
+
+      <section class="content-block">
+        <h2>📚 Documentação completa (GitHub Pages do produto)</h2>
+        <p style="margin: 0; color: var(--text-muted);">
+          Quando o Pages do repositório estiver ativo:
+          <code>https://&lt;OWNER&gt;.github.io/batimetria_kml_shape/</code>
+          — visão geral, produtos, como usar e FAQ (mesma linguagem desta página).
+        </p>
       </section>
     </main>
 
     <footer class="site-footer">
-      <p><a href="index.html">🔙 Voltar à vitrine de ferramentas</a></p>
+      <p><a href="index.html">🔙 Voltar à vitrine</a></p>
     </footer>
   </div>
 </body>
