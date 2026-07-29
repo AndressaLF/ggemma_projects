@@ -1,0 +1,15 @@
+# ggemma_projects — dependências Python (opcionais)
+#
+# O site público (docs/) é HTML estático: não precisa de pip para visitar
+# nem para publicar no GitHub Pages.
+#
+# Use este arquivo só se for regenerar assets locais, por exemplo:
+#   python -m venv .venv
+#   .venv\Scripts\activate
+#   pip install -r requirements.txt
+#   python scripts\export_extrator_demo_svg.py
+#
+# O script de demo também precisa do projeto irmão extrator_info_files
+# no mesmo nível de pastas (não é pacote PyPI deste repositório).
+
+rich==15.0.0
