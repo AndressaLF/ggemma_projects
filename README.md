@@ -11,6 +11,7 @@ Bem-vindo(a)! Este repositório é a **vitrine online** do laboratório **GGEMMA
 ## 📑 Sumário
 
 - [🌐 Visite a vitrine online](#visite-a-vitrine-online)
+- [🏛️ Sobre o GGEMMA](docs/sobre.html)
 - [🤔 O que é este projeto?](#o-que-e-este-projeto)
 - [🧰 Ferramentas disponíveis](#ferramentas-disponiveis)
 - [🔗 Sites de documentação (GitHub Pages)](#sites-de-documentacao)
@@ -32,9 +33,12 @@ Bem-vindo(a)! Este repositório é a **vitrine online** do laboratório **GGEMMA
 
 👉 **`https://andressalf.github.io/ggemma_projects/`**
 
+Site do laboratório: **[www.ggemma-ufrn.com](https://www.ggemma-ufrn.com/)** · [Sobre o GGEMMA](docs/sobre.html)
+
 | Página | O que você encontra | Link (padrão) |
 |--------|---------------------|---------------|
 | 🏠 Página inicial | Cards de todas as ferramentas | `https://andressalf.github.io/ggemma_projects/` |
+| 🏛️ Sobre o GGEMMA | Laboratório, UFRN e link oficial | `…/sobre.html` |
 | 📋 extrator_info_files | Inventário de pasta/HD | `…/extrator.html` |
 | ⚓ SurveyAnchor | Geolocalização batimétrica → KML | `…/surveyanchor.html` |
 | 🗺️ batimetria_kml_shape | Planilha → mapa | `…/batimetria.html` |
@@ -64,9 +68,9 @@ Este catálogo **apresenta** ferramentas de apoio à pesquisa e à operação em
 
 | Ferramenta | Versão | Para que serve (em poucas palavras) | Saiba mais |
 |------------|--------|-------------------------------------|------------|
-| 📋 **extrator_info_files** | **v0.2.1** | Inventário de pasta/HD (tipos, GPS, estágio) + PDF/CSV/JSON + **organize** (pastas EN / ano) | [Vitrine](docs/extrator.html) |
-| ⚓ **SurveyAnchor** | **v0.7.3** | Ancora batimetria de campo à localização geográfica — KML enxuto, SHP, catálogo e organize | [Vitrine](docs/surveyanchor.html) |
-| 🗺️ **batimetria_kml_shape** | **suite** (SHP v1.8.0 · linhas v1.0.1) | Planilha/texto → KML ou shapefile (linguagem clara para leigos) | [Vitrine](docs/batimetria.html) |
+| 📋 **extrator_info_files** | **v<!-- ver:extrator_info_files -->0.2.1<!-- /ver -->** | Inventário de pasta/HD (tipos, GPS, estágio) + PDF/CSV/JSON + **organize** (pastas EN / ano) | [Vitrine](docs/extrator.html) |
+| ⚓ **SurveyAnchor** | **v<!-- ver:surveyanchor -->0.7.3<!-- /ver -->** | Ancora batimetria de campo à localização geográfica — KML enxuto, SHP, catálogo e organize | [Vitrine](docs/surveyanchor.html) |
+| 🗺️ **batimetria_kml_shape** | **<!-- ver:batimetria_kml_shape -->suite<!-- /ver -->** (<!-- ver:batimetria_kml_shape__detail -->SHP v1.8.0 · linhas v1.0.1<!-- /ver -->) | Planilha/texto → KML ou shapefile (linguagem clara para leigos) | [Vitrine](docs/batimetria.html) |
 
 ### 🧭 Quando usar cada uma
 
@@ -165,7 +169,8 @@ git push origin main
 | 1 | Criar a página HTML da ferramenta (mesmo estilo das existentes) | `docs/<nome>.html` |
 | 2 | Incluir um card na página inicial | `docs/index.html` |
 | 3 | Atualizar a tabela deste README | [Ferramentas disponíveis](#ferramentas-disponiveis) |
-| 4 | Commit + push | O site online atualiza em alguns minutos |
+| 4 | Rodar `python tools/sync_versions.py` se a versão mudou | Atualiza badges |
+| 5 | Commit + push | O site online atualiza em alguns minutos |
 
 <a id="estrutura-fluxo"></a>
 
@@ -180,6 +185,7 @@ flowchart LR
   A["🏠 docs/index.html<br/>Página inicial"] --> B["📋 docs/extrator.html"]
   A --> S["⚓ docs/surveyanchor.html"]
   A --> C["🗺️ docs/batimetria.html"]
+  A --> O["🏛️ docs/sobre.html"]
   B --> D["📁 docs/assets/"]
   S --> D
   C --> D
@@ -199,11 +205,13 @@ flowchart LR
 ├── 📄 README.md                      ← este arquivo (GitHub; não é o site Pages)
 ├── 📄 LICENSE                        ← MIT (vitrine HTML)
 ├── 📄 requirements.txt               ← opcional (scripts locais)
+├── 📁 tools/                         ← sync_versions.py (versões das ferramentas)
 ├── 📄 .gitignore                     ← bloqueia transcripts, scripts, segredos
 │
 └── 📁 docs/                          ← 🌐 ÚNICA PASTA DO SITE ONLINE
     ├── 📄 .nojekyll
     ├── 📄 index.html
+    ├── 📄 sobre.html
     ├── 📄 extrator.html
     ├── 📄 surveyanchor.html
     ├── 📄 batimetria.html
@@ -228,6 +236,7 @@ scripts/                              ← 🔧 só na sua máquina (ignorado pel
 | Ajustar cores / layout do site | `docs/assets/style.css` |
 | Incluir uma **nova** ferramenta | criar `docs/<nome>.html` + card em `index.html` + linha no README |
 | Publicar no ar | `git push` → Pages publica `docs/` |
+| Sincronizar versões das ferramentas | `python tools/sync_versions.py` |
 
 #### ☁️ Fluxo de publicação (Git → site online)
 
@@ -259,5 +268,5 @@ flowchart TD
 ---
 
 <p align="center">
-  <strong>GGEMMA</strong> · Catálogo de ferramentas · Geofísica marítima · [MIT](LICENSE)
+  <strong>GGEMMA</strong> · Catálogo de ferramentas · [Site do laboratório](https://www.ggemma-ufrn.com/) · [MIT](LICENSE)
 </p>

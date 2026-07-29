@@ -17,10 +17,19 @@
 </head>
 <body>
   <div class="container">
+    <nav class="site-nav" aria-label="Principal">
+      <a class="is-active" href="index.html">Catálogo</a>
+      <a href="sobre.html">Sobre</a>
+      <a href="https://www.ggemma-ufrn.com/" rel="noopener noreferrer" target="_blank">Site do laboratório ↗</a>
+    </nav>
+
     <header class="site-header">
       <div class="brand-row">
-        <img class="brand-mark" src="assets/favicon.svg" alt="" width="40" height="40">
-        <p class="brand-label">GGEMMA<span>Laboratório · geofísica marítima</span></p>
+        <img class="brand-mark" src="assets/favicon_ggemma_16x16.png" alt="Logo GGEMMA" width="40" height="40">
+        <p class="brand-label">
+          <a href="sobre.html" style="color: inherit; text-decoration: none;">GGEMMA</a>
+          <span>UFRN · PPGG · <a href="https://www.ggemma-ufrn.com/" rel="noopener noreferrer" target="_blank">ggemma-ufrn.com</a></span>
+        </p>
       </div>
       <h1>🌊 Catálogo de ferramentas</h1>
       <p class="tagline">
@@ -45,7 +54,7 @@
           <div class="icon">📋</div>
           <h2>extrator_info_files</h2>
           <div class="meta">
-            <span class="badge live">Inventário · v0.2.1</span>
+            <span class="badge live">Inventário · v<span data-version="extrator_info_files">0.2.1</span></span>
             <span class="badge soon">Docs técnicas em breve</span>
           </div>
           <p>
@@ -64,7 +73,7 @@
           <div class="icon">⚓</div>
           <h2>SurveyAnchor</h2>
           <div class="meta">
-            <span class="badge live">Geolocalização · v0.7.3</span>
+            <span class="badge live">Geolocalização · v<span data-version="surveyanchor">0.7.3</span></span>
             <span class="badge soon">Docs técnicas em breve</span>
           </div>
           <p>
@@ -81,7 +90,7 @@
           <div class="icon">🗺️</div>
           <h2>batimetria_kml_shape</h2>
           <div class="meta">
-            <span class="badge live">Planilha → mapa · suite</span>
+            <span class="badge live">Planilha → mapa · <span data-version="batimetria_kml_shape">suite</span></span>
             <span class="badge soon">Docs técnicas em breve</span>
           </div>
           <p>
@@ -112,17 +121,17 @@
             <tbody>
               <tr>
                 <td>Chegou um HD/pasta e não sei o que tem dentro</td>
-                <td><strong><a href="extrator.html">extrator_info_files</a></strong> · v0.2.1</td>
+                <td><strong><a href="extrator.html">extrator_info_files</a></strong> · v<span data-version="extrator_info_files">0.2.1</span></td>
                 <td>Inventário + PDF/CSV/JSON e pastas organizadas</td>
               </tr>
               <tr>
                 <td>Tenho batimetria de campo e preciso ver <em>onde</em> foi</td>
-                <td><strong><a href="surveyanchor.html">SurveyAnchor</a></strong> · v0.7.3</td>
+                <td><strong><a href="surveyanchor.html">SurveyAnchor</a></strong> · v<span data-version="surveyanchor">0.7.3</span></td>
                 <td>KML enxuto (e SHP) para Google Earth / GIS</td>
               </tr>
               <tr>
                 <td>Tenho planilha/TXT com lon, lat e profundidade</td>
-                <td><strong><a href="batimetria.html">batimetria_kml_shape</a></strong> · suite</td>
+                <td><strong><a href="batimetria.html">batimetria_kml_shape</a></strong> · <span data-version="batimetria_kml_shape">suite</span></td>
                 <td>Arquivo KML ou shapefile pronto para o mapa</td>
               </tr>
             </tbody>
@@ -133,9 +142,11 @@
       <section class="content-block">
         <h2>Sobre esta vitrine</h2>
         <p style="margin: 0; color: var(--text-muted);">
-          Este site apresenta ferramentas de apoio a campanhas geofísicas marítimas.
+          Catálogo do laboratório <strong>GGEMMA</strong> (UFRN).
           Cada card leva a uma página com visão geral e orientações de uso.
-          Novas ferramentas entram na vitrine conforme forem produzidas e documentadas.
+          Saiba mais em <a href="sobre.html">Sobre o GGEMMA</a>
+          ou no
+          <a href="https://www.ggemma-ufrn.com/" rel="noopener noreferrer" target="_blank">site oficial do laboratório</a>.
         </p>
         <p style="margin: 1rem 0 0; color: var(--text-muted); font-size: 0.9rem;">
           Sites de documentação técnica dos produtos (GitHub Pages):
@@ -159,7 +170,7 @@
         </ul>
         <p class="note-soon">
           Enquanto os manuais técnicos não estiverem no ar, use as páginas desta vitrine
-          (<a href="extrator.html">extrator</a>,
+          <a href="extrator.html">extrator</a>,
           <a href="surveyanchor.html">SurveyAnchor</a> e
           <a href="batimetria.html">batimetria</a>.
         </p>
@@ -167,6 +178,11 @@
     </main>
 
     <footer class="site-footer">
+      <p>
+        <a href="sobre.html">Sobre o GGEMMA</a>
+        ·
+        <a href="https://www.ggemma-ufrn.com/" rel="noopener noreferrer" target="_blank">Site do laboratório</a>
+      </p>
       <p>GGEMMA · Catálogo de ferramentas · Geofísica marítima · Atualizado em <time id="last-update"></time></p>
     </footer>
   </div>

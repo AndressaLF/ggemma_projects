@@ -1,0 +1,7 @@
+{
+  "extrator_info_files": "0.2.1",
+  "surveyanchor": "0.7.3",
+  "batimetria_kml_shape": "suite",
+  "batimetria_kml_shape_detail": "SHP v1.8.0 · linhas v1.0.1",
+  "source": "tools/sync_versions.py"
+}

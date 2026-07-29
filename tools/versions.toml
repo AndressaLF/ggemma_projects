@@ -1,0 +1,21 @@
+# Mapeamento de versões da vitrine GGEMMA.
+# sync_versions.py lê pyproject.toml dos projetos irmãos e atualiza
+# spans data-version / marcadores <!-- ver:ID --> nos HTML e no README.
+#
+# pastas: nomes de diretório sob Py_GGEMMA_projects/ (relativos ao pai deste repo)
+# fallback: usado se o pyproject não existir (ex.: suite batimetria)
+
+[tools.extrator_info_files]
+pastas = ["extrator_info_files"]
+fallback = "0.2.1"
+
+[tools.surveyanchor]
+pastas = ["surveyanchor", "SurveyAnchor"]
+fallback = "0.7.3"
+
+[tools.batimetria_kml_shape]
+pastas = ["batimetria_kml_shape"]
+fallback = "suite"
+# Sem pyproject: mantém o rótulo composto abaixo no sync (label_readme / label_badge)
+label = "suite"
+label_detail = "SHP v1.8.0 · linhas v1.0.1"

@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Sobre o GGEMMA — Laboratório de Geologia e Geofísica Marinha e Monitoramento Ambiental (UFRN).">
+  <title>Sobre o GGEMMA</title>
+  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="pt_BR">
+  <meta property="og:title" content="Sobre o GGEMMA">
+  <meta property="og:description" content="Laboratório de Geologia e Geofísica Marinha e Monitoramento Ambiental — UFRN. Conheça a vitrine de ferramentas.">
+  <meta property="og:url" content="https://andressalf.github.io/ggemma_projects/sobre.html">
+  <meta property="og:image" content="https://andressalf.github.io/ggemma_projects/assets/og-card.svg">
+  <link rel="stylesheet" href="assets/style.css">
+</head>
+<body>
+  <div class="container">
+    <nav class="site-nav" aria-label="Principal">
+      <a href="index.html">Catálogo</a>
+      <a class="is-active" href="sobre.html">Sobre</a>
+      <a href="https://www.ggemma-ufrn.com/" rel="noopener noreferrer" target="_blank">Site do laboratório ↗</a>
+    </nav>
+
+    <header class="product-hero">
+      <div class="brand-row">
+        <img class="brand-mark" src="assets/logo_ggemma.png" alt="Logo GGEMMA" width="40" height="40">
+        <p class="brand-label">GGEMMA<span>UFRN · Natal/RN</span></p>
+      </div>
+      <h1>Sobre o GGEMMA</h1>
+      <p class="lead">
+        O <strong>GGEMMA</strong> é o
+        <strong>Laboratório de Geologia e Geofísica Marinha e Monitoramento Ambiental</strong>
+        da Universidade Federal do Rio Grande do Norte (UFRN).
+        Atua na pesquisa e no monitoramento do ambiente marinho —
+        “desvendando os segredos do mar, protegendo o futuro do planeta.”
+      </p>
+      <div class="cta-row">
+        <a class="btn btn-primary" href="https://www.ggemma-ufrn.com/" rel="noopener noreferrer" target="_blank">
+          Visitar o site do laboratório
+        </a>
+        <a class="btn btn-ghost" href="index.html">Ver catálogo de ferramentas</a>
+      </div>
+    </header>
+
+    <main>
+      <section class="content-block">
+        <h2>O que é esta vitrine</h2>
+        <p style="margin: 0; color: var(--text-muted);">
+          Este site (<strong>ggemma_projects</strong>) é um <strong>catálogo online</strong>
+          de ferramentas Python desenvolvidas no contexto do laboratório para apoiar
+          campanhas de dados geofísicos marítimos — inventário de pastas, geolocalização
+          batimétrica e conversão para GIS.
+        </p>
+        <div class="feature-grid" style="margin-top: 1rem;">
+          <div class="feature">
+            <h3>É</h3>
+            <p>Porta de entrada clara: o que cada ferramenta faz, quando usar e como começar.</p>
+          </div>
+          <div class="feature">
+            <h3>Não é</h3>
+            <p>Manual técnico completo de cada produto (isso fica no Pages de cada repositório, quando publicado).</p>
+          </div>
+        </div>
+      </section>
+
+      <section class="content-block">
+        <h2>Laboratório e universidade</h2>
+        <ul>
+          <li><strong>Nome:</strong> Laboratório de Geologia e Geofísica Marinha e Monitoramento Ambiental (GGEMMA)</li>
+          <li><strong>Instituição:</strong> Universidade Federal do Rio Grande do Norte (UFRN)</li>
+          <li><strong>Departamento:</strong> Departamento de Geologia</li>
+          <li><strong>Campus:</strong> Campus Universitário — Lagoa Nova, Natal/RN</li>
+        </ul>
+        <p style="margin: 1rem 0 0; color: var(--text-muted);">
+          Equipe, projetos, publicações, eventos e notícias:
+          <a href="https://www.ggemma-ufrn.com/" rel="noopener noreferrer" target="_blank">www.ggemma-ufrn.com</a>
+        </p>
+      </section>
+
+      <section class="content-block">
+        <h2>Ferramentas neste catálogo</h2>
+        <ul class="doc-links">
+          <li>
+            <a href="extrator.html">extrator_info_files</a>
+            <span class="badge live">v<span data-version="extrator_info_files">0.2.1</span></span>
+            <span class="doc-url">Inventário e organização de pasta/HD</span>
+          </li>
+          <li>
+            <a href="surveyanchor.html">SurveyAnchor</a>
+            <span class="badge live">v<span data-version="surveyanchor">0.7.3</span></span>
+            <span class="doc-url">Geolocalização batimétrica → KML/SHP</span>
+          </li>
+          <li>
+            <a href="batimetria.html">batimetria_kml_shape</a>
+            <span class="badge live"><span data-version="batimetria_kml_shape">suite</span></span>
+            <span class="doc-url">Planilha → mapa (KML / shapefile)</span>
+          </li>
+        </ul>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <p>
+        <a href="index.html">🔙 Voltar ao catálogo</a>
+        ·
+        <a href="https://www.ggemma-ufrn.com/" rel="noopener noreferrer" target="_blank">Site do GGEMMA</a>
+      </p>
+      <p>GGEMMA · UFRN · Atualizado em <time id="last-update"></time></p>
+    </footer>
+  </div>
+  <script src="assets/last-update.js"></script>
+</body>
+</html>
