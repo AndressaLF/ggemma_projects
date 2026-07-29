@@ -5,7 +5,9 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description" content="extrator_info_files — inventário e organização de pasta de campanha geofísica marítima.">
   <title>extrator_info_files</title>
-  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+  <link rel="icon" href="assets/favicon.ico" sizes="any">
+  <link rel="icon" href="assets/favicon.png" type="image/png" sizes="64x64">
+  <link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
   <meta property="og:type" content="website">
   <meta property="og:locale" content="pt_BR">
   <meta property="og:title" content="extrator_info_files — inventário de campanha">
@@ -121,12 +123,12 @@ pip install -r requirements.txt
 # Inventário (demo do repositório)
 python main.py banco_de_dados_treinamento/amostras_sinteticas -r
 
-# Sua campanha + PDF
-python main.py "D:\Campanha" -r --pdf
+# Sua pasta + PDF
+python main.py "./pasta_campanha" -r --pdf
 
 # Organizar (plano → Extrator_Organizer)
-python main.py organize "D:\Campanha" -r
-python main.py organize "D:\Campanha" -r --execute</code></pre>
+python main.py organize "./pasta_campanha" -r
+python main.py organize "./pasta_campanha" -r --execute</code></pre>
         <p style="color: var(--text-muted); font-size: 0.9rem; margin: 0.75rem 0 0;">
           Guia detalhado de cada comando: <code>docs/comandos.md</code> no repositório.
         </p>

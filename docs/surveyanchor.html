@@ -5,7 +5,9 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description" content="SurveyAnchor — ancora levantamentos batimétricos de campo à localização geográfica.">
   <title>SurveyAnchor</title>
-  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+  <link rel="icon" href="assets/favicon.ico" sizes="any">
+  <link rel="icon" href="assets/favicon.png" type="image/png" sizes="64x64">
+  <link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
   <meta property="og:type" content="website">
   <meta property="og:locale" content="pt_BR">
   <meta property="og:title" content="SurveyAnchor — geolocalização batimétrica">
@@ -150,7 +152,7 @@ python -m venv .venv
 pip install -e .
 
 surveyanchor export-kml -r
-surveyanchor catalog -i "D:\Levantamentos" -o "D:\Saida\catalogo" -r</code></pre>
+surveyanchor catalog -i "./levantamentos" -o "./saida/catalogo" -r</code></pre>
         <p style="color: var(--text-muted); font-size: 0.9rem; margin: 0.75rem 0 0;">
           Referência completa de flags:
           <code>docs/12-comandos-cli.md</code> no repositório.

@@ -152,7 +152,7 @@ Esta seção é para quem edita ou publica a vitrine no GitHub.
 | 2 | Se ainda não estiver ativo: **Settings → Pages** · branch `main` · pasta `/docs` |
 | 3 | Abrir **https://andressalf.github.io/ggemma_projects/** (2–10 min) |
 
-Antes do push (rápido): sem e-mails, sem `C:\Users\…` / `Y:\…`, sem nomes de campanha. Detalhes: [`docs/privacidade.md`](docs/privacidade.md).
+Antes do push (rápido): sem e-mails, sem paths de disco (`C:\…`, `D:\…`, `Y:\…`), sem nomes de campanha. Detalhes: [`docs/privacidade.md`](docs/privacidade.md).
 
 ```powershell
 git add .
@@ -217,9 +217,10 @@ flowchart LR
     ├── 📄 batimetria.html
     ├── 📄 privacidade.md
     └── 📁 assets/
+        ├── 📄 favicon.ico / favicon.png / logo_ggemma.png
+        ├── 📄 og-card.svg / last-update.js
         ├── 📄 style.css
-        ├── 📄 last-update.js
-        ├── 📄 favicon.svg / og-card.svg
+        ├── 📄 versions.json
         ├── 📄 extrator_demo_tabela.svg
         ├── 📄 surveyanchor_demo_mapa.svg
         └── 📄 batimetria_demo_fluxo.svg

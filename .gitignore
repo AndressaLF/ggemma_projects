@@ -1,26 +1,36 @@
 # =============================================================================
 # ggemma_projects — .gitignore
-# Site público = só docs/ genéricos. Sem handles, e-mails, paths, campanhas.
+# Site público = só docs/ genéricos (+ README/LICENSE/tools).
+# Sem e-mails, paths pessoais, transcripts, scripts locais, segredos.
 # Ver: docs/privacidade.md
 # =============================================================================
 
-# IDE / SO
+# --- IDE / SO ---
 .DS_Store
 Thumbs.db
+ehthumbs.db
 Desktop.ini
+$RECYCLE.BIN/
 *.log
 .cursor/
 .vscode/
 .idea/
+*.code-workspace
+*.swp
+*.swo
+*~
 
-# Transcripts / notas de sessão (e-mail, paths, handles, histórico)
+# --- Transcripts / notas de sessão (podem ter e-mail, paths, handles) ---
 cursor_*.md
 **/cursor_*.md
+cursor_ggemma*
 cursor_agent_*.md
 **/agent-transcripts/
-*.code-workspace
+*.local.md
+NOTES.local.md
+TODO.local.md
 
-# Segredos / overrides locais
+# --- Segredos / overrides locais ---
 .env
 .env.*
 !.env.example
@@ -28,25 +38,49 @@ cursor_agent_*.md
 *.local.json
 *.pem
 *.key
+*.p12
+*.pfx
 secrets/
 credentials*
+*_credentials*
 
-# Manutenção local — não publicar (site usa só docs/)
+# --- Manutenção local (não faz parte do site Pages) ---
 scripts/
 .git-hooks/
 *.git-hooks/
+tools/_*.py
 
-# Artefatos acidentais / demos locais
+# --- Python / ambientes ---
 __pycache__/
+*.py[cod]
+*$py.class
 .venv/
 venv/
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.coverage
+htmlcov/
+dist/
+build/
+*.egg-info/
+
+# --- Artefatos de campanha / demos locais ---
 relatorio_*.pdf
 relatorio_*.csv
 relatorio_*.json
 organize_manifest.json
 **/Extrator_Organizer/
+*.bak
+*.tmp
+*.temp
 
-# Pastas/paths quebrados acidentais na raiz
+# --- Favicons / exports experimentais obsoletos ---
+docs/assets/favicon.svg
+docs/assets/favicon_ggemma_16x16.png
+
+# --- Pastas/paths quebrados acidentais na raiz ---
 /C*/
 /Lima/
 /Lima.*/
+/Users/
