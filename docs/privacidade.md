@@ -18,7 +18,7 @@ Checklist antes de cada `git push` deste repositório.
 ## ✅ Pode versionar
 
 - HTML/CSS em `docs/` (descrição genérica das ferramentas)
-- README com placeholders `<OWNER>`
+- README e docs com links Pages em `andressalf.github.io`
 - `.gitignore`
 
 ---
@@ -35,7 +35,6 @@ Checklist antes de cada `git push` deste repositório.
 | Nomes de campanha, cliente, rota, embarcação | Identificação de projeto interno |
 | `C:\Users\…`, `Y:\…` | Paths pessoais |
 | E-mails, PATs, chaves SSH | Credenciais |
-| Handle GitHub pessoal em links `*.github.io/...` | Identifica a conta |
 
 ---
 
@@ -43,16 +42,16 @@ Checklist antes de cada `git push` deste repositório.
 
 ## 🔗 URLs e handles
 
-Nos docs versionados use:
+Nos docs versionados use o handle público `andressalf`:
 
 ```text
-https://<OWNER>.github.io/ggemma_projects/
-https://<OWNER>.github.io/extrator_info_files/
-https://<OWNER>.github.io/SurveyAnchor/
-https://<OWNER>.github.io/batimetria_kml_shape/
+https://andressalf.github.io/ggemma_projects/
+https://andressalf.github.io/extrator_info_files/
+https://andressalf.github.io/SurveyAnchor/
+https://andressalf.github.io/batimetria_kml_shape/
 ```
 
-A URL real fica só em **Settings → Pages** / **About → Website** na interface do GitHub — não precisa estar hardcoded nos arquivos do site.
+Ainda **não** versionar e-mails, paths locais (`C:\Users\…`, `Y:\…`) nem nomes de campanha.
 
 ---
 
@@ -62,9 +61,9 @@ A URL real fica só em **Settings → Pages** / **About → Website** na interfa
 
 ```powershell
 # Na pasta ggemma_projects
-Select-String -Path docs\*.html,docs\assets\*.svg,README.md -Pattern "github\.io/[a-z0-9]+/|@gmail|C:\\Users|Y:\\|andressa" -CaseSensitive:$false
+Select-String -Path docs\*.html,docs\assets\*.svg,README.md -Pattern "@gmail|C:\\Users|Y:\\" -CaseSensitive:$false
 git status
 git check-ignore -v cursor_ggemma_project_showcase.md
 ```
 
-Se o `Select-String` achar handle pessoal ou path local: **corrija antes do commit**.
+Se o `Select-String` achar e-mail ou path local: **corrija antes do commit**.

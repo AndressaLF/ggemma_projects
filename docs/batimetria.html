@@ -133,7 +133,7 @@ python converter_linhas_batimetria.py        # só linha</code></pre>
         <h2>📚 Documentação completa (GitHub Pages do produto)</h2>
         <p style="margin: 0; color: var(--text-muted);">
           Quando o Pages do repositório estiver ativo:
-          <code>https://&lt;OWNER&gt;.github.io/batimetria_kml_shape/</code>
+          <code>https://andressalf.github.io/batimetria_kml_shape/</code>
           — visão geral, produtos, como usar e FAQ (mesma linguagem desta página).
         </p>
       </section>
@@ -141,7 +141,21 @@ python converter_linhas_batimetria.py        # só linha</code></pre>
 
     <footer class="site-footer">
       <p><a href="index.html">🔙 Voltar à vitrine</a></p>
+      <p>Atualizado em <time id="last-update"></time></p>
     </footer>
   </div>
+  <script>
+    (function () {
+      var el = document.getElementById("last-update");
+      if (!el) return;
+      var d = new Date(document.lastModified);
+      var meses = [
+        "janeiro", "fevereiro", "março", "abril", "maio", "junho",
+        "julho", "agosto", "setembro", "outubro", "novembro", "dezembro"
+      ];
+      el.textContent = meses[d.getMonth()] + "/" + d.getFullYear();
+      el.setAttribute("datetime", d.toISOString().slice(0, 10));
+    })();
+  </script>
 </body>
 </html>

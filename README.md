@@ -4,7 +4,7 @@ Bem-vindo(a)! Este repositório é a **vitrine online** de ferramentas Python qu
 
 > 💡 **Não precisa saber programar** para usar a vitrine. Basta abrir o link no navegador e clicar nos cards das ferramentas.
 
-> 🔒 **Privacidade:** a documentação versionada **não** inclui handles pessoais, e-mails, paths locais nem nomes de campanha. URLs usam o placeholder `<OWNER>` — copie a URL real do botão **Code** / Settings → Pages na sua conta.
+> 🔒 **Privacidade:** a documentação versionada **não** inclui e-mails, paths locais nem nomes de campanha. Links do Pages usam o handle público `andressalf`.
 
 ---
 
@@ -28,13 +28,13 @@ Bem-vindo(a)! Este repositório é a **vitrine online** de ferramentas Python qu
 
 ## 🌐 Visite a vitrine online
 
-**Link principal** (substitua `<OWNER>` pelo dono/organização do repositório):
+**Link principal:**
 
-👉 **`https://<OWNER>.github.io/ggemma_projects/`**
+👉 **`https://andressalf.github.io/ggemma_projects/`**
 
 | Página | O que você encontra | Link (padrão) |
 |--------|---------------------|---------------|
-| 🏠 Página inicial | Cards de todas as ferramentas | `https://<OWNER>.github.io/ggemma_projects/` |
+| 🏠 Página inicial | Cards de todas as ferramentas | `https://andressalf.github.io/ggemma_projects/` |
 | 📋 extrator_info_files | Inventário de pasta/HD | `…/extrator.html` |
 | ⚓ SurveyAnchor | Geolocalização batimétrica → KML | `…/surveyanchor.html` |
 | 🗺️ batimetria_kml_shape | Planilha → mapa | `…/batimetria.html` |
@@ -84,13 +84,13 @@ Cada ferramenta tem uma página própria na vitrine com explicação, exemplos e
 
 ## 🔗 Sites de documentação (GitHub Pages)
 
-Além desta vitrine, cada produto pode ter o próprio site de docs (sempre com `<OWNER>` — sem handle pessoal no Git):
+Além desta vitrine, cada produto pode ter o próprio site de docs:
 
 | Projeto | Como publica | URL (padrão) | Para quem |
 |---------|--------------|--------------|-----------|
-| **ggemma_projects** (esta vitrine) | Branch `main` · pasta `/docs` | `https://<OWNER>.github.io/ggemma_projects/` | Visão geral / divulgação |
-| **SurveyAnchor** | GitHub Actions (MkDocs) | `https://<OWNER>.github.io/SurveyAnchor/` | Manual técnico |
-| **extrator_info_files** | Branch `main` · pasta `/docs` | `https://<OWNER>.github.io/extrator_info_files/` | Guia de comandos e instalação |
+| **ggemma_projects** (esta vitrine) | Branch `main` · pasta `/docs` | `https://andressalf.github.io/ggemma_projects/` | Visão geral / divulgação |
+| **SurveyAnchor** | GitHub Actions (MkDocs) | `https://andressalf.github.io/SurveyAnchor/` | Manual técnico |
+| **extrator_info_files** | Branch `main` · pasta `/docs` | `https://andressalf.github.io/extrator_info_files/` | Guia de comandos e instalação |
 
 > Em repositório **privado**, o GitHub Pages pode exigir plano Pro/Team.
 
@@ -144,7 +144,7 @@ git commit -m "Atualiza vitrine"
 git push origin main
 ```
 
-URL final: **`https://<OWNER>.github.io/ggemma_projects/`**
+URL final: **`https://andressalf.github.io/ggemma_projects/`**
 
 O arquivo `docs/.nojekyll` evita que o GitHub Pages processe o site com Jekyll e quebre caminhos ou assets.
 
@@ -152,9 +152,9 @@ O arquivo `docs/.nojekyll` evita que o GitHub Pages processe o site com Jekyll e
 
 | Conferir | OK? |
 |----------|-----|
-| Sem e-mails, handles pessoais ou `C:\Users\…` / `Y:\…` nos HTML/SVG | ☐ |
+| Sem e-mails ou `C:\Users\…` / `Y:\…` nos HTML/SVG | ☐ |
 | Sem nomes de campanha / cliente / rota / laboratório | ☐ |
-| Links de Pages usam `<OWNER>` ou caminhos relativos (`extrator.html`) | ☐ |
+| Links de Pages usam `andressalf` ou caminhos relativos (`extrator.html`) | ☐ |
 | Transcripts `cursor_*.md` e `scripts/` estão no `.gitignore` | ☐ |
 
 <a id="adicionar-ferramenta"></a>
@@ -231,7 +231,7 @@ flowchart TD
   E["✏️ Editar arquivos em docs/"] --> F["git add + git commit"]
   F --> G["git push origin main"]
   G --> H["GitHub Pages<br/>branch main · pasta /docs"]
-  H --> I["🌐 Site atualizado<br/>https://OWNER.github.io/ggemma_projects/"]
+  H --> I["🌐 Site atualizado<br/>https://andressalf.github.io/ggemma_projects/"]
 ```
 
 > **Regra prática:** o site online usa **apenas** `docs/`. A pasta `scripts/` e arquivos de IDE ficam fora do Git (`.gitignore`).
