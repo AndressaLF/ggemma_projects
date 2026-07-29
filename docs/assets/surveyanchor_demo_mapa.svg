@@ -1,0 +1,47 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 420" role="img" aria-labelledby="title desc">
+  <title id="title">Demo SurveyAnchor  pontos batimétricos no mapa</title>
+  <desc id="desc">Ilustração de pontos de profundidade ancorados geograficamente e exportados para KML.</desc>
+  <defs>
+    <linearGradient id="sea" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#0b1b33"/>
+      <stop offset="100%" stop-color="#0a1628"/>
+    </linearGradient>
+    <linearGradient id="depth" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#38bdf8"/>
+      <stop offset="50%" stop-color="#0ea5e9"/>
+      <stop offset="100%" stop-color="#0369a1"/>
+    </linearGradient>
+  </defs>
+  <rect width="900" height="420" rx="12" fill="#112240"/>
+  <rect x="24" y="24" width="560" height="372" rx="10" fill="url(#sea)" stroke="#1e3a5f"/>
+  <!-- coast -->
+  <path d="M24 120 C120 90 180 160 280 140 S420 80 520 110 L584 110 L584 396 L24 396 Z" fill="#0d2138" opacity="0.9"/>
+  <path d="M40 200 C140 170 220 240 320 210 S460 150 560 190" fill="none" stroke="#1e3a5f" stroke-width="2"/>
+  <!-- survey track -->
+  <path d="M90 300 C160 250 210 280 280 240 S390 180 470 210 S540 260 560 250" fill="none" stroke="url(#depth)" stroke-width="3" stroke-linecap="round"/>
+  <!-- depth points -->
+  <g>
+    <circle cx="110" cy="290" r="6" fill="#34d399"/><text x="120" y="286" fill="#94a3b8" font-size="11" font-family="Segoe UI, Arial">-12.4 m</text>
+    <circle cx="180" cy="255" r="6" fill="#38bdf8"/><text x="190" y="251" fill="#94a3b8" font-size="11" font-family="Segoe UI, Arial">-18.1 m</text>
+    <circle cx="250" cy="248" r="6" fill="#0ea5e9"/><text x="260" y="244" fill="#94a3b8" font-size="11" font-family="Segoe UI, Arial">-22.7 m</text>
+    <circle cx="330" cy="210" r="6" fill="#38bdf8"/><text x="340" y="206" fill="#94a3b8" font-size="11" font-family="Segoe UI, Arial">-31.0 m</text>
+    <circle cx="410" cy="195" r="6" fill="#34d399"/><text x="420" y="191" fill="#94a3b8" font-size="11" font-family="Segoe UI, Arial">-27.5 m</text>
+    <circle cx="490" cy="230" r="6" fill="#0ea5e9"/><text x="430" y="255" fill="#94a3b8" font-size="11" font-family="Segoe UI, Arial">-19.8 m</text>
+  </g>
+  <text x="40" y="52" fill="#e2e8f0" font-size="18" font-weight="700" font-family="Segoe UI, Arial">SurveyAnchor · visão geográfica</text>
+  <text x="40" y="76" fill="#94a3b8" font-size="13" font-family="Segoe UI, Arial">Pontos amostrados com profundidade · pronto para Google Earth</text>
+
+  <!-- side panel -->
+  <rect x="604" y="24" width="272" height="372" rx="10" fill="#0a1628" stroke="#1e3a5f"/>
+  <text x="624" y="60" fill="#38bdf8" font-size="14" font-weight="700" font-family="Segoe UI, Arial">export-kml</text>
+  <text x="624" y="90" fill="#e2e8f0" font-size="13" font-family="Segoe UI, Arial">Arquivo gerado</text>
+  <rect x="624" y="106" width="232" height="44" rx="8" fill="#112240" stroke="#1e3a5f"/>
+  <text x="640" y="133" fill="#cbd5e1" font-size="13" font-family="Consolas, monospace">campanha_area.kml</text>
+  <text x="624" y="180" fill="#e2e8f0" font-size="13" font-family="Segoe UI, Arial">Resumo</text>
+  <text x="624" y="208" fill="#94a3b8" font-size="12" font-family="Segoe UI, Arial">" 2.480 pontos amostrados</text>
+  <text x="624" y="230" fill="#94a3b8" font-size="12" font-family="Segoe UI, Arial">" CRS detectado: WGS 84</text>
+  <text x="624" y="252" fill="#94a3b8" font-size="12" font-family="Segoe UI, Arial">" Prof. 8,2 & 41,5 m</text>
+  <text x="624" y="274" fill="#94a3b8" font-size="12" font-family="Segoe UI, Arial">" Outliers removidos: 14</text>
+  <rect x="624" y="310" width="232" height="54" rx="8" fill="rgba(52,211,153,0.12)" stroke="rgba(52,211,153,0.35)"/>
+  <text x="640" y="342" fill="#34d399" font-size="13" font-weight="600" font-family="Segoe UI, Arial">Área localizada no mapa </text>
+</svg>

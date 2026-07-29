@@ -5,12 +5,19 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description" content="extrator_info_files — inventário e organização de pasta de campanha geofísica marítima.">
   <title>extrator_info_files</title>
+  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="pt_BR">
+  <meta property="og:title" content="extrator_info_files — inventário de campanha">
+  <meta property="og:description" content="Inventaria tipos de dado, GPS e estágio; exporta PDF/CSV/JSON e organiza o acervo.">
+  <meta property="og:url" content="https://andressalf.github.io/ggemma_projects/extrator.html">
+  <meta property="og:image" content="https://andressalf.github.io/ggemma_projects/assets/og-card.svg">
   <link rel="stylesheet" href="assets/style.css">
 </head>
 <body>
   <div class="container">
     <nav class="breadcrumb">
-      <a href="index.html">🌊 ← Voltar à vitrine</a>
+      <a href="index.html">🌊 GGEMMA · Voltar à vitrine</a>
     </nav>
 
     <header class="product-hero">
@@ -98,7 +105,7 @@
         </p>
       </section>
 
-      <section class="content-block">
+      <section class="content-block" id="como-comecar">
         <h2>▶️ Como começar</h2>
         <pre><code>cd extrator_info_files
 python -m venv .venv
@@ -122,9 +129,20 @@ python main.py organize "D:\Campanha" -r --execute</code></pre>
       <section class="content-block">
         <h2>📚 Documentação online (GitHub Pages)</h2>
         <p style="margin: 0; color: var(--text-muted);">
-          Quando o Pages do repositório estiver ativo:
-          <code>https://andressalf.github.io/extrator_info_files/</code>
-          — guia de comandos também em <code>docs/comandos.md</code> no repositório.
+          O manual técnico do produto ainda <strong>não está no ar</strong>
+          <span class="badge soon">Em breve</span>.
+          URL prevista:
+          <span class="doc-url">https://andressalf.github.io/extrator_info_files/</span>
+        </p>
+        <div class="cta-row">
+          <span class="btn btn-disabled" title="Manual técnico ainda não publicado" aria-disabled="true">
+            📚 Manual técnico (em breve)
+          </span>
+          <a class="btn btn-ghost" href="#como-comecar">▶️ Como começar nesta página</a>
+        </div>
+        <p style="margin: 0.75rem 0 0; color: var(--text-muted);">
+          Enquanto isso, use esta página da vitrine e o guia
+          <code>docs/comandos.md</code> no repositório da ferramenta.
         </p>
       </section>
 
@@ -139,22 +157,10 @@ python main.py organize "D:\Campanha" -r --execute</code></pre>
     </main>
 
     <footer class="site-footer">
-      <p><a href="index.html">🔙 Voltar à vitrine</a></p>
+      <p><a href="index.html">🔙 GGEMMA · Voltar à vitrine</a></p>
       <p>Atualizado em <time id="last-update"></time></p>
     </footer>
   </div>
-  <script>
-    (function () {
-      var el = document.getElementById("last-update");
-      if (!el) return;
-      var d = new Date(document.lastModified);
-      var meses = [
-        "janeiro", "fevereiro", "março", "abril", "maio", "junho",
-        "julho", "agosto", "setembro", "outubro", "novembro", "dezembro"
-      ];
-      el.textContent = meses[d.getMonth()] + "/" + d.getFullYear();
-      el.setAttribute("datetime", d.toISOString().slice(0, 10));
-    })();
-  </script>
+  <script src="assets/last-update.js"></script>
 </body>
 </html>

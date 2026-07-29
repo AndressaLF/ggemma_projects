@@ -5,12 +5,19 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description" content="batimetria_kml_shape — transforme planilhas de batimetria em mapa (KML e shapefile) para Google Earth e QGIS.">
   <title>batimetria_kml_shape · catálogo</title>
+  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="pt_BR">
+  <meta property="og:title" content="batimetria_kml_shape — planilha → mapa">
+  <meta property="og:description" content="Converte planilhas e textos de batimetria em KML ou shapefile, 100% local.">
+  <meta property="og:url" content="https://andressalf.github.io/ggemma_projects/batimetria.html">
+  <meta property="og:image" content="https://andressalf.github.io/ggemma_projects/assets/og-card.svg">
   <link rel="stylesheet" href="assets/style.css">
 </head>
 <body>
   <div class="container">
     <nav class="breadcrumb">
-      <a href="index.html">🌊 ← Voltar à vitrine</a>
+      <a href="index.html">🌊 GGEMMA · Voltar à vitrine</a>
     </nav>
 
     <header class="product-hero">
@@ -22,6 +29,8 @@
         sem montar o mapa na mão.
       </p>
       <p style="color: var(--text-muted); font-size: 0.95rem; margin: 0 0 1rem;">
+        Status: suite de conversão —
+        <strong>shapefile v1.8.0</strong> · <strong>linhas v1.0.1</strong>.
         Em uma frase: <strong>arquivo chato → desenho no mapa</strong>.
         Roda 100% no seu computador.
       </p>
@@ -105,6 +114,25 @@
       </section>
 
       <section class="content-block">
+        <h2>👁️ Como fica na prática</h2>
+        <p style="margin: 0 0 1rem; color: var(--text-muted);">
+          Você escolhe a pasta com a planilha; o programa gera KML (Google Earth)
+          e/ou shapefile (QGIS) na mesma pasta.
+        </p>
+        <div class="demo-image-wrap">
+          <img
+            class="demo-image demo-flow"
+            src="assets/batimetria_demo_fluxo.svg"
+            alt="Fluxo ilustrativo: planilha com coordenadas e profundidade convertida em KML ou shapefile"
+            loading="lazy"
+          >
+        </div>
+        <p style="color: var(--text-muted); font-size: 0.85rem; margin: 0.75rem 0 0;">
+          📊 Ilustração do fluxo — os nomes de arquivo de saída seguem o padrão do conversor.
+        </p>
+      </section>
+
+      <section class="content-block" id="como-comecar">
         <h2>▶️ Como começar (bem direto)</h2>
         <pre><code>cd batimetria_kml_shape
 python -m venv .venv
@@ -132,30 +160,28 @@ python converter_linhas_batimetria.py        # só linha</code></pre>
       <section class="content-block">
         <h2>📚 Documentação completa (GitHub Pages do produto)</h2>
         <p style="margin: 0; color: var(--text-muted);">
-          Quando o Pages do repositório estiver ativo:
-          <code>https://andressalf.github.io/batimetria_kml_shape/</code>
-          — visão geral, produtos, como usar e FAQ (mesma linguagem desta página).
+          O site de docs do produto ainda <strong>não está no ar</strong>
+          <span class="badge soon">Em breve</span>.
+          URL prevista:
+          <span class="doc-url">https://andressalf.github.io/batimetria_kml_shape/</span>
+        </p>
+        <div class="cta-row">
+          <span class="btn btn-disabled" title="Manual técnico ainda não publicado" aria-disabled="true">
+            📚 Manual técnico (em breve)
+          </span>
+          <a class="btn btn-ghost" href="#como-comecar">▶️ Como começar nesta página</a>
+        </div>
+        <p style="margin: 0.75rem 0 0; color: var(--text-muted);">
+          Enquanto isso, esta página da vitrine cobre visão geral, produtos e FAQ.
         </p>
       </section>
     </main>
 
     <footer class="site-footer">
-      <p><a href="index.html">🔙 Voltar à vitrine</a></p>
+      <p><a href="index.html">🔙 GGEMMA · Voltar à vitrine</a></p>
       <p>Atualizado em <time id="last-update"></time></p>
     </footer>
   </div>
-  <script>
-    (function () {
-      var el = document.getElementById("last-update");
-      if (!el) return;
-      var d = new Date(document.lastModified);
-      var meses = [
-        "janeiro", "fevereiro", "março", "abril", "maio", "junho",
-        "julho", "agosto", "setembro", "outubro", "novembro", "dezembro"
-      ];
-      el.textContent = meses[d.getMonth()] + "/" + d.getFullYear();
-      el.setAttribute("datetime", d.toISOString().slice(0, 10));
-    })();
-  </script>
+  <script src="assets/last-update.js"></script>
 </body>
 </html>

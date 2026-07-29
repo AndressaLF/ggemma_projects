@@ -5,12 +5,19 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description" content="SurveyAnchor — ancora levantamentos batimétricos de campo à localização geográfica.">
   <title>SurveyAnchor</title>
+  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="pt_BR">
+  <meta property="og:title" content="SurveyAnchor — geolocalização batimétrica">
+  <meta property="og:description" content="Ancora batimetria de campo ao mapa: KML enxuto, shapefiles e catálogo — 100% local.">
+  <meta property="og:url" content="https://andressalf.github.io/ggemma_projects/surveyanchor.html">
+  <meta property="og:image" content="https://andressalf.github.io/ggemma_projects/assets/og-card.svg">
   <link rel="stylesheet" href="assets/style.css">
 </head>
 <body>
   <div class="container">
     <nav class="breadcrumb">
-      <a href="index.html">🌊 ← Voltar à vitrine</a>
+      <a href="index.html">🌊 GGEMMA · Voltar à vitrine</a>
     </nav>
 
     <header class="product-hero">
@@ -30,7 +37,7 @@
         <span class="badge live">📍 Geolocalização batimétrica</span>
         <span class="badge">🗺️ KML / SHP</span>
         <span class="badge">🔒 100% local</span>
-        <span class="badge">📚 Docs online</span>
+        <span class="badge soon">Docs online em breve</span>
       </div>
     </header>
 
@@ -98,6 +105,25 @@
       </section>
 
       <section class="content-block">
+        <h2>👁️ Como fica na prática</h2>
+        <p style="margin: 0 0 1rem; color: var(--text-muted);">
+          Depois do <code>export-kml</code>, você abre o arquivo no Google Earth e confere
+          a área do levantamento com profundidades amostradas.
+        </p>
+        <div class="demo-image-wrap">
+          <img
+            class="demo-image demo-flow"
+            src="assets/surveyanchor_demo_mapa.svg"
+            alt="Ilustração de pontos batimétricos geolocalizados e resumo do KML gerado pelo SurveyAnchor"
+            loading="lazy"
+          >
+        </div>
+        <p style="color: var(--text-muted); font-size: 0.85rem; margin: 0.75rem 0 0;">
+          🗺️ Ilustração esquemática — o KML real depende dos seus arquivos de campo.
+        </p>
+      </section>
+
+      <section class="content-block">
         <h2>📂 Formatos (resumo)</h2>
         <p style="margin: 0 0 0.75rem; color: var(--text-muted);">
           Texto tabular, NMEA, Excel multi-aba, grades BAG, nuvens LAS, rasters GeoTIFF
@@ -110,7 +136,7 @@
         </ul>
       </section>
 
-      <section class="content-block">
+      <section class="content-block" id="como-comecar">
         <h2>▶️ Como começar</h2>
         <pre><code>cd surveyanchor
 python -m venv .venv
@@ -128,10 +154,21 @@ surveyanchor catalog -i "D:\Levantamentos" -o "D:\Saida\catalogo" -r</code></pre
       <section class="content-block">
         <h2>📚 Documentação online (GitHub Pages)</h2>
         <p style="margin: 0; color: var(--text-muted);">
-          Site MkDocs Material (PT + landing EN), quando Pages estiver ativo:
-          <code>https://andressalf.github.io/SurveyAnchor/</code>
-          · landing EN:
-          <code>…/en/</code>
+          O site MkDocs do produto ainda <strong>não está no ar</strong>
+          <span class="badge soon">Em breve</span>.
+          URL prevista:
+          <span class="doc-url">https://andressalf.github.io/SurveyAnchor/</span>
+          (landing EN: <code>…/en/</code>).
+        </p>
+        <div class="cta-row">
+          <span class="btn btn-disabled" title="Manual técnico ainda não publicado" aria-disabled="true">
+            📚 Manual técnico (em breve)
+          </span>
+          <a class="btn btn-ghost" href="#como-comecar">▶️ Como começar nesta página</a>
+        </div>
+        <p style="margin: 0.75rem 0 0; color: var(--text-muted);">
+          Enquanto isso, use esta página e
+          <code>docs/12-comandos-cli.md</code> no repositório.
         </p>
       </section>
 
@@ -146,22 +183,10 @@ surveyanchor catalog -i "D:\Levantamentos" -o "D:\Saida\catalogo" -r</code></pre
     </main>
 
     <footer class="site-footer">
-      <p><a href="index.html">🔙 Voltar à vitrine</a></p>
+      <p><a href="index.html">🔙 GGEMMA · Voltar à vitrine</a></p>
       <p>Atualizado em <time id="last-update"></time></p>
     </footer>
   </div>
-  <script>
-    (function () {
-      var el = document.getElementById("last-update");
-      if (!el) return;
-      var d = new Date(document.lastModified);
-      var meses = [
-        "janeiro", "fevereiro", "março", "abril", "maio", "junho",
-        "julho", "agosto", "setembro", "outubro", "novembro", "dezembro"
-      ];
-      el.textContent = meses[d.getMonth()] + "/" + d.getFullYear();
-      el.setAttribute("datetime", d.toISOString().slice(0, 10));
-    })();
-  </script>
+  <script src="assets/last-update.js"></script>
 </body>
 </html>

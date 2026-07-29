@@ -3,16 +3,28 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Catálogo de ferramentas Python para geofísica e batimetria marítima.">
-  <title>Catálogo de ferramentas — geofísica marítima</title>
+  <meta name="description" content="GGEMMA — catálogo de ferramentas Python para geofísica e batimetria marítima.">
+  <title>GGEMMA — Catálogo de ferramentas</title>
+  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="pt_BR">
+  <meta property="og:title" content="GGEMMA — Catálogo de ferramentas">
+  <meta property="og:description" content="Vitrine de ferramentas Python do laboratório GGEMMA para inventário, batimetria e geoprocessamento marítimo.">
+  <meta property="og:url" content="https://andressalf.github.io/ggemma_projects/">
+  <meta property="og:image" content="https://andressalf.github.io/ggemma_projects/assets/og-card.svg">
+  <meta name="twitter:card" content="summary_large_image">
   <link rel="stylesheet" href="assets/style.css">
 </head>
 <body>
   <div class="container">
     <header class="site-header">
+      <div class="brand-row">
+        <img class="brand-mark" src="assets/favicon.svg" alt="" width="40" height="40">
+        <p class="brand-label">GGEMMA<span>Laboratório · geofísica marítima</span></p>
+      </div>
       <h1>🌊 Catálogo de ferramentas</h1>
       <p class="tagline">
-        Ferramentas em Python para campanhas de dados geofísicos marítimos:
+        Portfólio de ferramentas em Python para campanhas de dados geofísicos marítimos:
         inventário, geolocalização batimétrica, conversão para GIS e apoio ao processamento.
       </p>
       <div class="badge-row">
@@ -34,6 +46,7 @@
           <h2>extrator_info_files</h2>
           <div class="meta">
             <span class="badge live">Inventário · v0.2.1</span>
+            <span class="badge soon">Docs técnicas em breve</span>
           </div>
           <p>
             Chegou um HD ou pasta de campanha e você precisa saber o que há dentro
@@ -52,6 +65,7 @@
           <h2>SurveyAnchor</h2>
           <div class="meta">
             <span class="badge live">Geolocalização · v0.7.3</span>
+            <span class="badge soon">Docs técnicas em breve</span>
           </div>
           <p>
             Ancore levantamentos batimétricos de campo à localização geográfica.
@@ -67,7 +81,8 @@
           <div class="icon">🗺️</div>
           <h2>batimetria_kml_shape</h2>
           <div class="meta">
-            <span class="badge live">Planilha → mapa</span>
+            <span class="badge live">Planilha → mapa · suite</span>
+            <span class="badge soon">Docs técnicas em breve</span>
           </div>
           <p>
             Tem profundidade e coordenadas no Excel ou no TXT e quer ver no Google Earth
@@ -81,6 +96,41 @@
       </div>
 
       <section class="content-block">
+        <h2>🧭 Quando usar cada ferramenta</h2>
+        <p style="margin: 0; color: var(--text-muted);">
+          Em dúvida? Comece pela situação em que você está:
+        </p>
+        <div class="guide-table-wrap">
+          <table class="guide-table">
+            <thead>
+              <tr>
+                <th>Situação</th>
+                <th>Ferramenta</th>
+                <th>Resultado típico</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Chegou um HD/pasta e não sei o que tem dentro</td>
+                <td><strong><a href="extrator.html">extrator_info_files</a></strong> · v0.2.1</td>
+                <td>Inventário + PDF/CSV/JSON e pastas organizadas</td>
+              </tr>
+              <tr>
+                <td>Tenho batimetria de campo e preciso ver <em>onde</em> foi</td>
+                <td><strong><a href="surveyanchor.html">SurveyAnchor</a></strong> · v0.7.3</td>
+                <td>KML enxuto (e SHP) para Google Earth / GIS</td>
+              </tr>
+              <tr>
+                <td>Tenho planilha/TXT com lon, lat e profundidade</td>
+                <td><strong><a href="batimetria.html">batimetria_kml_shape</a></strong> · suite</td>
+                <td>Arquivo KML ou shapefile pronto para o mapa</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+      <section class="content-block">
         <h2>Sobre esta vitrine</h2>
         <p style="margin: 0; color: var(--text-muted);">
           Este site apresenta ferramentas de apoio a campanhas geofísicas marítimas.
@@ -88,35 +138,38 @@
           Novas ferramentas entram na vitrine conforme forem produzidas e documentadas.
         </p>
         <p style="margin: 1rem 0 0; color: var(--text-muted); font-size: 0.9rem;">
-          Sites de documentação dos produtos:
-          <br>
-          <code>https://andressalf.github.io/SurveyAnchor/</code>
-          <br>
-          
-          <code>https://andressalf.github.io/extrator_info_files/</code>
-          <br>
-          
-          <code>https://andressalf.github.io/batimetria_kml_shape/</code>
+          Sites de documentação técnica dos produtos (GitHub Pages):
+        </p>
+        <ul class="doc-links">
+          <li>
+            <a href="surveyanchor.html">SurveyAnchor</a>
+            <span class="badge soon">Em breve</span>
+            <span class="doc-url">https://andressalf.github.io/SurveyAnchor/</span>
+          </li>
+          <li>
+            <a href="extrator.html">extrator_info_files</a>
+            <span class="badge soon">Em breve</span>
+            <span class="doc-url">https://andressalf.github.io/extrator_info_files/</span>
+          </li>
+          <li>
+            <a href="batimetria.html">batimetria_kml_shape</a>
+            <span class="badge soon">Em breve</span>
+            <span class="doc-url">https://andressalf.github.io/batimetria_kml_shape/</span>
+          </li>
+        </ul>
+        <p class="note-soon">
+          Enquanto os manuais técnicos não estiverem no ar, use as páginas desta vitrine
+          (<a href="extrator.html">extrator</a>,
+          <a href="surveyanchor.html">SurveyAnchor</a> e
+          <a href="batimetria.html">batimetria</a>.
         </p>
       </section>
     </main>
 
     <footer class="site-footer">
-      <p>Catálogo de ferramentas · Geofísica marítima · Atualizado em <time id="last-update"></time></p>
+      <p>GGEMMA · Catálogo de ferramentas · Geofísica marítima · Atualizado em <time id="last-update"></time></p>
     </footer>
   </div>
-  <script>
-    (function () {
-      var el = document.getElementById("last-update");
-      if (!el) return;
-      var d = new Date(document.lastModified);
-      var meses = [
-        "janeiro", "fevereiro", "março", "abril", "maio", "junho",
-        "julho", "agosto", "setembro", "outubro", "novembro", "dezembro"
-      ];
-      el.textContent = meses[d.getMonth()] + "/" + d.getFullYear();
-      el.setAttribute("datetime", d.toISOString().slice(0, 10));
-    })();
-  </script>
+  <script src="assets/last-update.js"></script>
 </body>
 </html>
