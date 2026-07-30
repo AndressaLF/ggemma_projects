@@ -3,15 +3,15 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="SurveyAnchor — ancora levantamentos batimétricos de campo à localização geográfica.">
+  <meta name="description" content="SurveyAnchor — reconhece, geolocaliza, inventaria e organiza acervos batimétricos de campo.">
   <title>SurveyAnchor</title>
   <link rel="icon" href="assets/favicon.ico" sizes="any">
   <link rel="icon" href="assets/favicon.png" type="image/png" sizes="64x64">
   <link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
   <meta property="og:type" content="website">
   <meta property="og:locale" content="pt_BR">
-  <meta property="og:title" content="SurveyAnchor — geolocalização batimétrica">
-  <meta property="og:description" content="Ancora batimetria de campo ao mapa: KML enxuto, shapefiles e catálogo — 100% local.">
+  <meta property="og:title" content="SurveyAnchor — geolocalização e catálogo batimétrico">
+  <meta property="og:description" content="Ancora levantamentos de campo ao mapa: reconhece formatos, inventaria o acervo, gera KML/SHP e organiza pastas — 100% local.">
   <meta property="og:url" content="https://andressalf.github.io/ggemma_projects/surveyanchor.html">
   <meta property="og:image" content="https://andressalf.github.io/ggemma_projects/assets/og-card.svg">
   <link rel="stylesheet" href="assets/style.css">
@@ -31,25 +31,43 @@
     <header class="product-hero">
       <h1>⚓ SurveyAnchor</h1>
       <p class="lead">
-        <strong>Ancore levantamentos de campo à sua localização geográfica.</strong>
-        Lê planilhas, textos, logs e outros formatos batimétricos, reconhece
-        automaticamente o layout e o sistema de coordenadas, e exporta um
-        <strong>KML enxuto</strong> (e shapefiles opcionais) para consultar no Google Earth —
-        sem software GIS proprietário.
+        <strong>Ancore o levantamento batimétrico à sua localização geográfica</strong>
+        e trate o acervo de ponta a ponta: reconhece formatos automaticamente,
+        inventaria o que há na pasta, exporta <strong>KML</strong> e <strong>shapefile</strong>
+        para consultar no mapa e pode <strong>organizar</strong> cópias por ano —
+        pacote Python com CLI (GUI em andamento), 100% local.
       </p>
       <p style="color: var(--text-muted); font-size: 0.95rem; margin: 0 0 1rem;">
         Status atual: <strong>v<span data-version="surveyanchor">0.7.3</span></strong> (alpha em calibração).
-        Processamento 100% local.
+        Escopo Brasil ou global (config + i18n PT/EN).
       </p>
       <div class="badge-row">
-        <span class="badge live">📍 Geolocalização batimétrica</span>
+        <span class="badge live">📍 Geolocalização</span>
+        <span class="badge">📋 Inventário / catálogo</span>
         <span class="badge">🗺️ KML / SHP</span>
+        <span class="badge">📁 Organize</span>
         <span class="badge">🔒 100% local</span>
         <span class="badge soon">Docs online em breve</span>
       </div>
     </header>
 
     <main>
+      <section class="content-block">
+        <h2>❓ Por que isso é necessário</h2>
+        <p style="margin: 0 0 0.75rem; color: var(--text-muted);">
+          Em campanhas marítimas, os arquivos chegam misturados e muitas vezes
+          <strong>sem documentação clara</strong> de coluna, sistema de coordenadas ou área.
+          Sem ancorar os dados ao mapa, a equipe não responde com segurança:
+          <em>onde exatamente foi este levantamento?</em> e
+          <em>o que mais existe nesta pasta?</em>
+        </p>
+        <ul>
+          <li>Conferir a área no Google Earth / GIS <strong>antes</strong> de processar no software pesado</li>
+          <li>Inventariar formatos e presença de coordenadas em acervos heterogêneos</li>
+          <li>Entregar KML/SHP, catálogo e pastas organizadas a partir do mesmo fluxo</li>
+        </ul>
+      </section>
+
       <section class="content-block">
         <h2>🎯 O que ela resolve</h2>
         <div class="feature-grid">
@@ -58,15 +76,15 @@
             <p>
               Acervos batimétricos chegam misturados (Excel, TXT, LOG, NMEA, BAG…)
               sem documentação clara de coluna, CRS ou área. A pergunta básica fica:
-              <em>onde exatamente aconteceu este levantamento?</em>
+              <em>onde exatamente aconteceu este levantamento — e o que mais há nesta pasta?</em>
             </p>
           </div>
           <div class="feature">
             <h3>✨ Com o SurveyAnchor</h3>
             <p>
-              O motor identifica formato e coordenadas, limpa outliers e entrega
-              posição geográfica consultável — KML amostrado (~2.500 pontos) e,
-              se quiser, contornos e linhas em shapefile.
+              Identifica formato e coordenadas, limpa outliers, entrega posição no mapa
+              (KML/SHP), inventaria o acervo (catálogo) e pode reorganizar pastas —
+              tudo no mesmo produto.
             </p>
           </div>
         </div>
@@ -99,7 +117,8 @@
             <span class="tool-name">📋 surveyanchor catalog -i PASTA</span>
             <span class="tool-version">Catálogo</span>
             <span class="tool-desc">
-              Inventário tabular (CSV / JSON / SQLite) dos arquivos reconhecidos.
+              Inventaria o acervo: inventário tabular (CSV / JSON / SQLite)
+              dos arquivos reconhecidos na pasta.
             </span>
           </li>
           <li>
@@ -183,9 +202,9 @@ surveyanchor catalog -i "./levantamentos" -o "./saida/catalogo" -r</code></pre>
       <section class="content-block">
         <h2>👥 Para quem é</h2>
         <ul>
-          <li>⚙️ <strong>Processamento / operação</strong> — localizar rápido onde cada arquivo “cai” no mapa</li>
-          <li>✅ <strong>QA e entrega</strong> — conferir extensão espacial sem abrir GIS pesado</li>
-          <li>🔬 <strong>Pesquisa</strong> — catálogo e KML a partir de acervos heterogêneos</li>
+          <li>⚙️ <strong>Processamento / operação</strong> — localizar onde cada arquivo “cai” no mapa e inventariar o acervo</li>
+          <li>✅ <strong>QA e entrega</strong> — conferir extensão espacial sem GIS pesado; catálogo + KML</li>
+          <li>🔬 <strong>Pesquisa</strong> — acervos heterogêneos (planilha, log, BAG, raster…)</li>
         </ul>
       </section>
     </main>

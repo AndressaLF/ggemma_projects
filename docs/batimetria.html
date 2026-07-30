@@ -3,15 +3,15 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="batimetria_kml_shape — transforme planilhas de batimetria em mapa (KML e shapefile) para Google Earth e QGIS.">
-  <title>batimetria_kml_shape · catálogo</title>
+  <meta name="description" content="batimetria_kml_shape — converte batimetria tabular (CSV, TXT, XYZ, Excel, LOG) em KML ou shapefile.">
+  <title>batimetria_kml_shape</title>
   <link rel="icon" href="assets/favicon.ico" sizes="any">
   <link rel="icon" href="assets/favicon.png" type="image/png" sizes="64x64">
   <link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
   <meta property="og:type" content="website">
   <meta property="og:locale" content="pt_BR">
-  <meta property="og:title" content="batimetria_kml_shape — planilha → mapa">
-  <meta property="og:description" content="Converte planilhas e textos de batimetria em KML ou shapefile, 100% local.">
+  <meta property="og:title" content="batimetria_kml_shape — conversão tabular → mapa">
+  <meta property="og:description" content="Scripts locais: CSV, TXT, XYZ, Excel e LOG com coordenadas + profundidade viram KML ou shapefile.">
   <meta property="og:url" content="https://andressalf.github.io/ggemma_projects/batimetria.html">
   <meta property="og:image" content="https://andressalf.github.io/ggemma_projects/assets/og-card.svg">
   <link rel="stylesheet" href="assets/style.css">
@@ -31,72 +31,130 @@
     <header class="product-hero">
       <h1>🗺️ batimetria_kml_shape</h1>
       <p class="lead">
-        <strong>Você tem profundidade + coordenadas numa planilha… e quer ver isso no mapa.</strong>
-        Esta ferramenta lê a pasta, entende o arquivo e gera
-        <strong>KML</strong> (Google Earth) ou <strong>shapefile</strong> (QGIS) —
-        sem montar o mapa na mão.
+        <strong>Objetivo:</strong> pegar batimetria em formato
+        <strong>tabular ou texto</strong> (coordenadas + profundidade) e
+        <strong>desenhar no mapa</strong> — gerando <strong>KML</strong> (Google Earth)
+        ou <strong>shapefile</strong> (QGIS), sem montar o mapa na mão.
       </p>
       <p style="color: var(--text-muted); font-size: 0.95rem; margin: 0 0 1rem;">
-        Status: <span data-version="batimetria_kml_shape">suite</span> de conversão —
+        Suite de scripts Python (não é um pacote instalável).
+        Versões: <span data-version="batimetria_kml_shape">suite</span> —
         <strong><span data-version="batimetria_kml_shape__detail">SHP v1.8.0 · linhas v1.0.1</span></strong>.
-        Em uma frase: <strong>arquivo chato → desenho no mapa</strong>.
-        Roda 100% no seu computador.
+        Foco exclusivo: <strong>arquivo tabular/texto → desenho no mapa</strong>.
       </p>
       <div class="badge-row">
-        <span class="badge live">🌍 KML</span>
-        <span class="badge">📐 Shapefile</span>
-        <span class="badge">🖱️ Escolhe a pasta na janela</span>
+        <span class="badge live">CSV · TXT · XYZ · Excel · LOG</span>
+        <span class="badge">→ KML / SHP</span>
+        <span class="badge">🖱️ Scripts .py</span>
         <span class="badge">🔒 Offline</span>
       </div>
     </header>
 
     <main>
       <section class="content-block">
-        <h2>😫 O problema (sem enrolação)</h2>
-        <div class="feature-grid">
-          <div class="feature">
-            <h3>📦 O que chega</h3>
-            <p>
-              Excel, CSV, TXT, XYZ, log… cada um de um jeito. Colunas sem nome claro.
-              Às vezes UTM, às vezes graus. Abrir ponto a ponto no Excel não mostra a área.
-            </p>
-          </div>
-          <div class="feature">
-            <h3>✨ O que o programa faz</h3>
-            <p>
-              Lê a pasta, tenta achar coordenadas e profundidade, limpa pontos estranhos
-              e entrega arquivos prontos para abrir no mapa.
-            </p>
-          </div>
-        </div>
+        <h2>🎯 Para que serve (objetivo)</h2>
+        <p style="margin: 0 0 0.75rem; color: var(--text-muted);">
+          Em campanhas marítimas, profundidade e posição costumam chegar em
+          arquivos “chatos” de planilha ou texto. Abrir linha a linha no Excel
+          <strong>não mostra a área</strong> no mapa. Esta suite resolve exatamente isso:
+        </p>
+        <ul>
+          <li>Lê uma pasta com arquivos tabulares/texto de batimetria</li>
+          <li>Identifica (heurísticas) colunas de coordenada e profundidade</li>
+          <li>Limpa pontos inválidos e gera arquivo pronto para visualizar</li>
+          <li>Saída: <strong>KML</strong> e/ou <strong>shapefile</strong> na mesma pasta</li>
+        </ul>
+        <p class="note-soon">
+          Em uma frase: <strong>dado tabular de batimetria → desenho no mapa</strong>.
+        </p>
       </section>
 
       <section class="content-block">
-        <h2>🧰 Três produtos (escolha o que precisa)</h2>
+        <h2>📥 O que ela aceita (entrada)</h2>
+        <p style="margin: 0 0 0.75rem; color: var(--text-muted);">
+          <strong>Não é só TXT e Excel.</strong> A suite trabalha com dados
+          <em>tabulares ou em texto</em> que tenham posição + profundidade:
+        </p>
+        <div class="guide-table-wrap">
+          <table class="guide-table">
+            <thead>
+              <tr>
+                <th>Tipo</th>
+                <th>Extensões típicas</th>
+                <th>Quando aparece</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><strong>Planilha</strong></td>
+                <td><code>.xlsx</code>, <code>.xls</code></td>
+                <td>Exportações de campo / processamento em Excel</td>
+              </tr>
+              <tr>
+                <td><strong>Tabela texto</strong></td>
+                <td><code>.csv</code>, <code>.txt</code>, <code>.xyz</code></td>
+                <td>Listas lon/lat/z ou X/Y/z separadas por vírgula, espaço ou tab</td>
+              </tr>
+              <tr>
+                <td><strong>Log de campo</strong></td>
+                <td><code>.log</code> (e afins em texto)</td>
+                <td>Registros de ecosonda / navegação em formato texto</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <p style="margin: 1rem 0 0.5rem; color: var(--text-muted);">
+          <strong>O que o arquivo precisa ter</strong> (em colunas, mesmo sem nome perfeito):
+        </p>
+        <ul>
+          <li>Coordenadas geográficas (<strong>longitude + latitude</strong>) <em>ou</em> UTM (<strong>X + Y</strong>)</li>
+          <li>Profundidade / cota (<strong>Z</strong>)</li>
+        </ul>
+        <p class="note-soon">
+          <strong>Fora do escopo:</strong> formatos binários / raster de campo
+          (BAG, LAS, GeoTIFF, GSF, XTF, KMALL e similares). Esta suite trabalha
+          com entrada tabular ou texto.
+        </p>
+      </section>
+
+      <section class="content-block">
+        <h2>📤 O que ela entrega (saída)</h2>
         <ul class="tool-list">
           <li>
             <span class="tool-name">🌍 Conversor KML</span>
             <span class="tool-version">converter_batimetria2.py</span>
             <span class="tool-desc">
-              “Só quero ver no Google Earth hoje.” Gera <code>.kml</code> para conferência rápida.
+              Gera <code>.kml</code> para abrir no Google Earth e conferir se a área
+              “cai” no lugar certo — conversão rápida de visualização.
             </span>
           </li>
           <li>
             <span class="tool-name">📐 Contornos + linhas</span>
             <span class="tool-version">converter_shapefile_batimetria.py · v1.8.0</span>
             <span class="tool-desc">
-              “Preciso entregar para o QGIS.” Gera área (<code>CA_…</code>) e trajeto (<code>L_…</code>).
-              Separa pedaços longe um do outro no mesmo arquivo.
+              Gera shapefiles de área (<code>CA_…</code>) e trajeto (<code>L_…</code>)
+              para QGIS / GIS. Separa pedaços longe um do outro no mesmo arquivo.
             </span>
           </li>
           <li>
             <span class="tool-name">〰️ Só linhas</span>
             <span class="tool-version">converter_linhas_batimetria.py · v1.0.1</span>
             <span class="tool-desc">
-              “Só o caminho da embarcação.” Exporta apenas linhas de navegação.
+              Exporta apenas linhas de navegação (caminho da embarcação).
             </span>
           </li>
         </ul>
+      </section>
+
+      <section class="content-block">
+        <h2>📌 Por que isso é necessário</h2>
+        <p style="margin: 0; color: var(--text-muted);">
+          Em campanha, profundidade e posição costumam chegar em planilha ou texto.
+          Abrir linha a linha no Excel <strong>não mostra a área</strong> no mapa.
+          Esta suite existe para transformar esse arquivo tabular em
+          <strong>KML</strong> ou <strong>shapefile</strong> pronto para Google Earth / QGIS —
+          conversão rápida, local e didática.
+        </p>
       </section>
 
       <section class="content-block">
@@ -104,19 +162,19 @@
         <div class="feature-grid">
           <div class="feature">
             <h3>🌍 Ver no Google Earth</h3>
-            <p>Arquivo KML para abrir e checar se a área “cai” no lugar certo.</p>
+            <p>KML para checar área e profundidades sem montar projeto GIS.</p>
           </div>
           <div class="feature">
             <h3>📐 Usar no QGIS</h3>
-            <p>Shapefile de área e/ou linha, no padrão de mapa usado em muitos trabalhos no Brasil.</p>
+            <p>Shapefile de área e/ou linha, pronto para abrir no mapa.</p>
           </div>
           <div class="feature">
-            <h3>🧹 Limpeza automática</h3>
-            <p>Tenta tirar profundidade inválida e pontos fora do esperado — menos mapa “quebrado”.</p>
+            <h3>🧹 Limpeza básica</h3>
+            <p>Tenta remover profundidade inválida e pontos fora do esperado.</p>
           </div>
           <div class="feature">
-            <h3>🖱️ Sem digitar caminho</h3>
-            <p>Abre uma janela, você escolhe a pasta com o mouse e pronto.</p>
+            <h3>🖱️ Pasta na janela</h3>
+            <p>Escolhe a pasta com o mouse — não precisa digitar caminho.</p>
           </div>
         </div>
       </section>
@@ -124,24 +182,24 @@
       <section class="content-block">
         <h2>👁️ Como fica na prática</h2>
         <p style="margin: 0 0 1rem; color: var(--text-muted);">
-          Você escolhe a pasta com a planilha; o programa gera KML (Google Earth)
-          e/ou shapefile (QGIS) na mesma pasta.
+          Você aponta a pasta com CSV, TXT, XYZ, Excel ou LOG; o script gera
+          KML e/ou shapefile <strong>na mesma pasta</strong>.
         </p>
         <div class="demo-image-wrap">
           <img
             class="demo-image demo-flow"
             src="assets/batimetria_demo_fluxo.svg"
-            alt="Fluxo ilustrativo: planilha com coordenadas e profundidade convertida em KML ou shapefile"
+            alt="Fluxo: dados tabulares de batimetria convertidos em KML ou shapefile"
             loading="lazy"
           >
         </div>
         <p style="color: var(--text-muted); font-size: 0.85rem; margin: 0.75rem 0 0;">
-          📊 Ilustração do fluxo — os nomes de arquivo de saída seguem o padrão do conversor.
+          📊 Ilustração do fluxo — nomes de saída seguem o padrão de cada conversor.
         </p>
       </section>
 
       <section class="content-block" id="como-comecar">
-        <h2>▶️ Como começar (bem direto)</h2>
+        <h2>▶️ Como começar</h2>
         <pre><code>cd batimetria_kml_shape
 python -m venv .venv
 .\.venv\Scripts\Activate.ps1
@@ -151,7 +209,8 @@ python converter_batimetria2.py              # KML
 python converter_shapefile_batimetria.py     # área + linha
 python converter_linhas_batimetria.py        # só linha</code></pre>
         <p style="color: var(--text-muted); font-size: 0.9rem; margin: 0.75rem 0 0;">
-          Entrada: pasta com CSV, TXT, XYZ, Excel ou LOG.
+          Entrada: pasta com <strong>CSV, TXT, XYZ, Excel (.xlsx/.xls) ou LOG</strong>
+          contendo coordenadas + profundidade.
           Saída: na <strong>mesma pasta</strong> que você escolheu.
         </p>
       </section>
@@ -159,9 +218,12 @@ python converter_linhas_batimetria.py        # só linha</code></pre>
       <section class="content-block">
         <h2>❓ Em 10 segundos</h2>
         <ul>
-          <li>❓ Preciso ser programador? → Só instalar Python e rodar um comando.</li>
-          <li>🔒 Meus dados sobem para a nuvem? → Não. Tudo local.</li>
-          <li>🗺️ Substitui o QGIS? → Não. Prepara o arquivo para você abrir lá.</li>
+          <li>❓ Só aceita TXT e Excel? → <strong>Não.</strong> Também CSV, XYZ e LOG (texto/tabular).</li>
+          <li>❓ Preciso ser programador? → Instalar Python e rodar um dos três scripts.</li>
+          <li>🔒 Dados sobem para a nuvem? → Não. Tudo local.</li>
+          <li>🗺️ Substitui o QGIS? → Não. Prepara o arquivo para abrir lá (ou no Google Earth).</li>
+          <li>🎯 Ponto forte? → <strong>Conversor tabular/texto → KML/SHP</strong>,
+            com seletor de pasta e saída na mesma pasta.</li>
         </ul>
       </section>
 
@@ -179,9 +241,6 @@ python converter_linhas_batimetria.py        # só linha</code></pre>
           </span>
           <a class="btn btn-ghost" href="#como-comecar">▶️ Como começar nesta página</a>
         </div>
-        <p style="margin: 0.75rem 0 0; color: var(--text-muted);">
-          Enquanto isso, esta página da vitrine cobre visão geral, produtos e FAQ.
-        </p>
       </section>
     </main>
 

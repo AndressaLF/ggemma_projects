@@ -12,7 +12,7 @@
   <text x="66" y="192" fill="#cbd5e1" font-size="12" font-family="Consolas, monospace">-43.11  -22.90  -18.7</text>
   <text x="66" y="216" fill="#cbd5e1" font-size="12" font-family="Consolas, monospace">-43.10  -22.89  -25.1</text>
   <text x="66" y="240" fill="#cbd5e1" font-size="12" font-family="Consolas, monospace">-43.09  -22.88  -31.4</text>
-  <text x="66" y="275" fill="#94a3b8" font-size="12" font-family="Segoe UI, Arial">CSV · TXT · XYZ · Excel</text>
+          <text x="66" y="275" fill="#94a3b8" font-size="12" font-family="Segoe UI, Arial">CSV Â· TXT Â· XYZ Â· Excel Â· LOG</text>
 
   <!-- arrow -->
   <path d="M310 180 H390" stroke="#0ea5e9" stroke-width="4" stroke-linecap="round"/>
@@ -37,8 +37,8 @@
 
   <rect x="690" y="180" width="174" height="124" rx="10" fill="#0a1628" stroke="rgba(56,189,248,0.4)"/>
   <text x="710" y="220" fill="#38bdf8" font-size="15" font-weight="700" font-family="Segoe UI, Arial">.shp</text>
-  <text x="710" y="246" fill="#94a3b8" font-size="12" font-family="Segoe UI, Arial">CA_& área</text>
+  <text x="710" y="246" fill="#94a3b8" font-size="12" font-family="Segoe UI, Arial">CA_& Ã¡rea</text>
   <text x="710" y="268" fill="#94a3b8" font-size="12" font-family="Segoe UI, Arial">L_& linhas</text>
 
-  <text x="36" y="36" fill="#e2e8f0" font-size="18" font-weight="700" font-family="Segoe UI, Arial">Planilha ’ mapa · sem montar na mão</text>
+  <text x="36" y="36" fill="#e2e8f0" font-size="18" font-weight="700" font-family="Segoe UI, Arial">Planilha Â’ mapa Â· sem montar na mÃ£o</text>
 </svg>

@@ -64,10 +64,16 @@
           </div>
           <p>
             Chegou um HD ou pasta de campanha e você precisa saber o que há dentro
-            antes de abrir tudo no software de processamento? Em poucos minutos, a
-            ferramenta varre os arquivos e resume tipos de dado, presença de
-            coordenadas e estágio — com export PDF/CSV/JSON e comando
-            <strong>organize</strong> para reorganizar o acervo.
+            <strong>antes</strong> de abrir tudo no software de processamento?
+            O extrator varre a pasta e classifica formatos geofísicos reconhecidos —
+            entre eles <strong>HYPACK</strong>, <strong>Kongsberg (.ALL)</strong>,
+            <strong>XTF</strong>, <strong>EdgeTech (.JSF)</strong>, <strong>Surfer</strong>,
+            <strong>SEG-Y</strong> e <strong>GeoTIFF</strong> — indicando presença de
+            coordenadas e o estágio (bruto / processado / auxiliar), com resumo em
+            tabela no terminal. Você pode exportar relatórios em <strong>PDF</strong>,
+            <strong>CSV</strong> e <strong>JSON</strong> e, com o comando
+            <strong>organize</strong>, reorganizar o acervo em pastas padronizadas —
+            leitura local, só cabeçalhos e amostras (não sobe dados para a nuvem).
           </p>
           <div class="card-actions">
             <a class="btn btn-primary" href="extrator.html">Ver ferramenta</a>
@@ -79,12 +85,24 @@
           <h2>SurveyAnchor</h2>
           <div class="meta">
             <span class="badge live">Geolocalização · v<span data-version="surveyanchor">0.7.3</span></span>
+            <span class="badge">Inventário</span>
+            <span class="badge">KML / SHP</span>
             <span class="badge soon">Docs técnicas em breve</span>
           </div>
           <p>
-            Ancore levantamentos batimétricos de campo à localização geográfica.
-            Reconhece formatos automaticamente e exporta <strong>KML</strong> enxuto
-            (e shapefiles) para consultar no Google Earth — sem GIS proprietário.
+            <strong>Precisa saber onde o levantamento batimétrico aconteceu</strong>
+            e o que mais existe na pasta? O SurveyAnchor ancora os dados de campo
+            à <strong>localização geográfica</strong>: reconhece formatos
+            automaticamente — entre eles planilhas <strong>Excel</strong>,
+            <strong>CSV / TXT / XYZ</strong>, logs <strong>NMEA</strong> / ecosonda,
+            grades <strong>BAG</strong>, nuvens <strong>LAS</strong>, rasters
+            <strong>GeoTIFF</strong> e parsers leves de multibeam
+            (<strong>GSF</strong>, <strong>XTF</strong>, <strong>KMALL</strong>
+            (em calibração contínua) —, limpa outliers e entrega posição no mapa via
+            <strong>KML</strong> e <strong>shapefile</strong> (Google Earth / GIS).
+            No mesmo fluxo, <strong>inventaria</strong> o acervo (catálogo em
+            CSV / JSON / SQLite) e pode <strong>organizar</strong> cópias por ano.
+            Pacote Python com CLI (GUI em andamento), processamento 100% local.
           </p>
           <div class="card-actions">
             <a class="btn btn-primary" href="surveyanchor.html">Ver ferramenta</a>
@@ -95,13 +113,22 @@
           <div class="icon">🗺️</div>
           <h2>batimetria_kml_shape</h2>
           <div class="meta">
-            <span class="badge live">Planilha → mapa · <span data-version="batimetria_kml_shape">suite</span></span>
-            <span class="badge soon">Docs técnicas em breve</span>
+            <span class="badge live">Conversão · <span data-version="batimetria_kml_shape">suite</span></span>
+            <span class="badge">CSV · TXT · XYZ · Excel · LOG</span>
+            <span class="badge">→ KML / SHP</span>
           </div>
           <p>
-            Tem profundidade e coordenadas no Excel ou no TXT e quer ver no Google Earth
-            ou no QGIS? O programa lê a pasta e gera KML ou shapefile — sem montar o
-            mapa na mão.
+            <strong>Batimetria em planilha ou texto e precisa ver a área no mapa?</strong>
+            Esta suite de scripts Python converte dados <em>tabulares ou em texto</em>
+            com coordenadas + profundidade em arquivo pronto para visualizar:
+            <strong>KML</strong> (Google Earth) e/ou <strong>shapefile</strong> (QGIS) —
+            área (contornos) e/ou linha de navegação. Formatos de entrada:
+            <strong>CSV</strong>, <strong>TXT</strong>, <strong>XYZ</strong>,
+            <strong>Excel (.xlsx / .xls)</strong> e <strong>LOG</strong> (texto) —
+            com longitude/latitude ou UTM (X/Y) mais profundidade (Z).
+            Identifica as colunas, limpa pontos inválidos e grava a saída
+            <strong>na mesma pasta</strong> que você escolheu. Uso offline,
+            com seletor de pasta na janela.
           </p>
           <div class="card-actions">
             <a class="btn btn-primary" href="batimetria.html">Ver ferramenta</a>
@@ -130,14 +157,14 @@
                 <td>Inventário + PDF/CSV/JSON e pastas organizadas</td>
               </tr>
               <tr>
-                <td>Tenho batimetria de campo e preciso ver <em>onde</em> foi</td>
+                <td>Preciso saber <em>onde</em> foi o levantamento, inventariar e organizar o acervo</td>
                 <td><strong><a href="surveyanchor.html">SurveyAnchor</a></strong> · v<span data-version="surveyanchor">0.7.3</span></td>
-                <td>KML enxuto (e SHP) para Google Earth / GIS</td>
+                <td>Geolocalização + inventário (catálogo) + KML/SHP + organize</td>
               </tr>
               <tr>
-                <td>Tenho planilha/TXT com lon, lat e profundidade</td>
+                <td>Tenho CSV/TXT/XYZ/Excel/LOG com coordenadas + profundidade e só quero KML/SHP</td>
                 <td><strong><a href="batimetria.html">batimetria_kml_shape</a></strong> · <span data-version="batimetria_kml_shape">suite</span></td>
-                <td>Arquivo KML ou shapefile pronto para o mapa</td>
+                <td>Arquivo de mapa pronto — conversão tabular → KML/SHP</td>
               </tr>
             </tbody>
           </table>
@@ -156,6 +183,7 @@
         <p style="margin: 1rem 0 0; color: var(--text-muted); font-size: 0.9rem;">
           Sites de documentação técnica dos produtos (GitHub Pages):
         </p>
+        <br>
         <ul class="doc-links">
           <li>
             <a href="surveyanchor.html">SurveyAnchor</a>

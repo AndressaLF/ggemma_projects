@@ -40,8 +40,8 @@ Site do laboratório: **[www.ggemma-ufrn.com](https://www.ggemma-ufrn.com/)** ·
 | 🏠 Página inicial | Cards de todas as ferramentas | `https://andressalf.github.io/ggemma_projects/` |
 | 🏛️ Sobre o GGEMMA | Laboratório, UFRN e link oficial | `…/sobre.html` |
 | 📋 extrator_info_files | Inventário de pasta/HD | `…/extrator.html` |
-| ⚓ SurveyAnchor | Geolocalização batimétrica → KML | `…/surveyanchor.html` |
-| 🗺️ batimetria_kml_shape | Planilha → mapa | `…/batimetria.html` |
+| ⚓ SurveyAnchor | Geolocalizar + inventariar + organizar acervo batimétrico | `…/surveyanchor.html` |
+| 🗺️ batimetria_kml_shape | Conversão: CSV/TXT/XYZ/Excel/LOG → KML/SHP | `…/batimetria.html` |
 
 Abra em qualquer navegador. **Não** é necessário instalar nada. A URL real aparece em **Settings → Pages** após o deploy.
 
@@ -69,24 +69,24 @@ Este catálogo **apresenta** ferramentas de apoio à pesquisa e à operação em
 | Ferramenta | Versão | Para que serve (em poucas palavras) | Saiba mais |
 |------------|--------|-------------------------------------|------------|
 | 📋 **extrator_info_files** | **v<!-- ver:extrator_info_files -->0.2.1<!-- /ver -->** | Inventário de pasta/HD (tipos, GPS, estágio) + PDF/CSV/JSON + **organize** (pastas EN / ano) | [Vitrine](docs/extrator.html) |
-| ⚓ **SurveyAnchor** | **v<!-- ver:surveyanchor -->0.7.3<!-- /ver -->** | Ancora batimetria de campo à localização geográfica — KML enxuto, SHP, catálogo e organize | [Vitrine](docs/surveyanchor.html) |
-| 🗺️ **batimetria_kml_shape** | **<!-- ver:batimetria_kml_shape -->suite<!-- /ver -->** (<!-- ver:batimetria_kml_shape__detail -->SHP v1.8.0 · linhas v1.0.1<!-- /ver -->) | Planilha/texto → KML ou shapefile (linguagem clara para leigos) | [Vitrine](docs/batimetria.html) |
+| ⚓ **SurveyAnchor** | **v<!-- ver:surveyanchor -->0.7.3<!-- /ver -->** | Ancora batimetria de campo à localização geográfica; reconhece formatos, **inventaria** o acervo (catálogo), gera KML/SHP e organize | [Vitrine](docs/surveyanchor.html) |
+| 🗺️ **batimetria_kml_shape** | **<!-- ver:batimetria_kml_shape -->suite<!-- /ver -->** (<!-- ver:batimetria_kml_shape__detail -->SHP v1.8.0 · linhas v1.0.1<!-- /ver -->) | Converte batimetria tabular/texto (**CSV, TXT, XYZ, Excel, LOG**) com coordenadas + profundidade em **KML** ou **shapefile** — para ver a área no mapa | [Vitrine](docs/batimetria.html) |
 
 ### 🧭 Quando usar cada uma
 
 | Situação | Ferramenta |
 |----------|------------|
 | HD/pasta chegou e não sei o que tem | **extrator_info_files** |
-| Batimetria de campo e preciso ver *onde* foi | **SurveyAnchor** |
-| Planilha/TXT com lon, lat e profundidade | **batimetria_kml_shape** |
+| Preciso saber *onde* foi o levantamento e inventariar/organizar o acervo | **SurveyAnchor** |
+| Só quero converter CSV/TXT/XYZ/Excel/LOG → KML ou shapefile | **batimetria_kml_shape** |
 
 ### ✨ Novidades refletidas nesta vitrine (jul/2026)
 
 | Ferramenta | O que há de novo (para leigo) |
 |------------|-------------------------------|
-| **extrator_info_files** | Relatórios PDF/CSV/JSON; lê GeoTIFF; comando **organize** cria pastas `bathymetry/`, `documents/`, `images/`…; guia de comandos no próprio repositório |
-| **SurveyAnchor** | Comandos unificados (`export-kml`, `catalog`, `organize`…); site de docs no Pages |
-| **batimetria_kml_shape** | Páginas amigáveis + explicação sem jargão |
+| **extrator_info_files** | Relatórios PDF/CSV/JSON; lê GeoTIFF; comando **organize** cria pastas `bathymetry/`, `documents/`, `images/`… |
+| **SurveyAnchor** | CLI unificada (`export-kml`, `catalog`, `organize`…), mais formatos de campo, catálogo e i18n PT/EN |
+| **batimetria_kml_shape** | Documentação clara da suite de conversão tabular → KML/SHP |
 
 Cada ferramenta tem uma página própria na vitrine com explicação, exemplos e orientações gerais de uso.
 
@@ -262,6 +262,7 @@ flowchart TD
 | Preciso instalar Python para **só ver** a vitrine online? | **Não.** Basta abrir o link no navegador. |
 | O site mostra o código das ferramentas? | A vitrine **descreve** as ferramentas. O código fica nos respectivos repositórios. |
 | Qual a diferença entre esta vitrine e o Pages de cada produto? | Vitrine = **catálogo**. Pages do produto = **manual técnico** (ainda em breve). |
+| O que cada ferramenta de batimetria faz? | **SurveyAnchor:** geolocaliza, inventaria (catálogo) e organiza acervos. **batimetria_kml_shape:** converte tabular/texto (CSV, TXT, XYZ, Excel, LOG) em KML ou shapefile. |
 | Atualizei um HTML e o site online não mudou? | Falta `git push`. O Pages republica em 2–10 minutos. |
 | Posso compartilhar o link com pessoas de fora? | Sim, se Pages for público. As páginas **não** expõem dados de campanha nem e-mails/paths. |
 | Qual a licença desta vitrine? | [MIT](LICENSE) — cobre o site HTML/CSS deste repositório. |
