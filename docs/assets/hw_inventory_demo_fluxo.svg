@@ -8,8 +8,8 @@
   <polygon points="315,140 300,132 300,148" fill="#2563A0"/>
 
   <rect x="330" y="70" width="240" height="140" rx="16" fill="#fff" stroke="#C5D4E8" stroke-width="2"/>
-  <text x="450" y="125" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="18" fill="#1A3A5C" font-weight="700">Formulário</text>
-  <text x="450" y="155" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="14" fill="#64748B">Patrimônio · responsável · local</text>
+  <text x="450" y="125" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="18" fill="#1A3A5C" font-weight="700">Formulï¿½rio</text>
+  <text x="450" y="155" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="14" fill="#64748B">Patrimï¿½nio ï¿½ responsï¿½vel ï¿½ local</text>
 
   <path d="M585 140 H645" stroke="#2563A0" stroke-width="4" fill="none"/>
   <polygon points="645,140 630,132 630,148" fill="#2563A0"/>
@@ -18,7 +18,7 @@
   <text x="790" y="98" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="18" fill="#2563A0" font-weight="700">Excel (.xlsx)</text>
 
   <rect x="660" y="150" width="260" height="80" rx="14" fill="#E8F8EF" stroke="#167A50" stroke-width="2"/>
-  <text x="790" y="198" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="18" fill="#167A50" font-weight="700">PDF relatório</text>
+  <text x="790" y="198" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="18" fill="#167A50" font-weight="700">PDF relatï¿½rio</text>
 
-  <text x="480" y="40" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="16" fill="#1A3A5C" font-weight="700">hw_inventory — um PC por vez, offline</text>
+  <text x="480" y="40" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="16" fill="#1A3A5C" font-weight="700">hw_inventory ï¿½ um PC por vez, offline</text>
 </svg>
