@@ -98,10 +98,11 @@ a:hover {
 }
 
 .brand-mark {
-  width: 5.5rem;
-  height: auto;
+  width: 4.5rem;
+  height: 4.5rem;
   flex-shrink: 0;
   object-fit: contain;
+  border-radius: 50%;
 }
 
 .brand-label {
