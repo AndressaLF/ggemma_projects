@@ -42,6 +42,7 @@ Site do laboratório: **[www.ggemma-ufrn.com](https://www.ggemma-ufrn.com/)** ·
 | 📋 extrator_info_files | Inventário de pasta/HD | `…/extrator.html` |
 | ⚓ SurveyAnchor | Geolocalizar + inventariar + organizar acervo batimétrico | `…/surveyanchor.html` |
 | 🗺️ batimetria_kml_shape | Conversão: CSV/TXT/XYZ/Excel/LOG → KML/SHP | `…/batimetria.html` |
+| 💻 hw_inventory | Inventário patrimonial de hardware (Excel + PDF) | `…/hw_inventory.html` |
 
 Abra em qualquer navegador. **Não** é necessário instalar nada. A URL real aparece em **Settings → Pages** após o deploy.
 
@@ -71,6 +72,7 @@ Este catálogo **apresenta** ferramentas de apoio à pesquisa e à operação em
 | 📋 **extrator_info_files** | **v<!-- ver:extrator_info_files -->0.2.1<!-- /ver -->** | Inventário de pasta/HD (tipos, GPS, estágio) + PDF/CSV/JSON + **organize** (pastas EN / ano) | [Vitrine](docs/extrator.html) |
 | ⚓ **SurveyAnchor** | **v<!-- ver:surveyanchor -->0.7.3<!-- /ver -->** | Ancora batimetria de campo à localização geográfica; reconhece formatos, **inventaria** o acervo (catálogo), gera KML/SHP e organize | [Vitrine](docs/surveyanchor.html) |
 | 🗺️ **batimetria_kml_shape** | **<!-- ver:batimetria_kml_shape -->suite<!-- /ver -->** (<!-- ver:batimetria_kml_shape__detail -->SHP v1.8.0 · linhas v1.0.1<!-- /ver -->) | Converte batimetria tabular/texto (**CSV, TXT, XYZ, Excel, LOG**) com coordenadas + profundidade em **KML** ou **shapefile** — para ver a área no mapa | [Vitrine](docs/batimetria.html) |
+| 💻 **hw_inventory** | **v<!-- ver:hw_inventory -->0.3.5<!-- /ver -->** | Inventário patrimonial de hardware: coleta no PC, associa patrimônio e gera **Excel + PDF** (offline, 1 PC por vez) | [Vitrine](docs/hw_inventory.html) |
 
 ### 🧭 Quando usar cada uma
 
@@ -79,6 +81,7 @@ Este catálogo **apresenta** ferramentas de apoio à pesquisa e à operação em
 | HD/pasta chegou e não sei o que tem | **extrator_info_files** |
 | Preciso saber *onde* foi o levantamento e inventariar/organizar o acervo | **SurveyAnchor** |
 | Só quero converter CSV/TXT/XYZ/Excel/LOG → KML ou shapefile | **batimetria_kml_shape** |
+| Preciso documentar hardware + patrimônio de um PC (Excel/PDF) | **hw_inventory** |
 
 ### ✨ Novidades refletidas nesta vitrine (jul/2026)
 
@@ -87,6 +90,7 @@ Este catálogo **apresenta** ferramentas de apoio à pesquisa e à operação em
 | **extrator_info_files** | Relatórios PDF/CSV/JSON; lê GeoTIFF; comando **organize** cria pastas `bathymetry/`, `documents/`, `images/`… |
 | **SurveyAnchor** | CLI unificada (`export-kml`, `catalog`, `organize`…), mais formatos de campo, catálogo e i18n PT/EN |
 | **batimetria_kml_shape** | Documentação clara da suite de conversão tabular → KML/SHP |
+| **hw_inventory** | Inventário patrimonial de hardware (Excel + PDF), modos Individual/AD, manual ilustrado |
 
 Cada ferramenta tem uma página própria na vitrine com explicação, exemplos e orientações gerais de uso.
 
@@ -104,8 +108,9 @@ Além desta vitrine, cada produto pode ter o próprio site de docs:
 | **SurveyAnchor** | GitHub Actions (MkDocs) | `https://andressalf.github.io/SurveyAnchor/` | ⏳ Em breve |
 | **extrator_info_files** | Branch `main` · pasta `/docs` | `https://andressalf.github.io/extrator_info_files/` | ⏳ Em breve |
 | **batimetria_kml_shape** | Pages do produto | `https://andressalf.github.io/batimetria_kml_shape/` | ⏳ Em breve |
+| **hw_inventory** | Repositório público (exe + manual) | [github.com/AndressaLF/hw_inventory](https://github.com/AndressaLF/hw_inventory) | ✅ Pacote em `dist/` |
 
-Enquanto os manuais técnicos não estiverem publicados, use as páginas desta vitrine (`docs/extrator.html`, `docs/surveyanchor.html`, `docs/batimetria.html`).
+Enquanto os manuais técnicos não estiverem publicados, use as páginas desta vitrine (`docs/extrator.html`, `docs/surveyanchor.html`, `docs/batimetria.html`, `docs/hw_inventory.html`).
 
 > Em repositório **privado**, o GitHub Pages pode exigir plano Pro/Team.
 
@@ -185,10 +190,12 @@ flowchart LR
   A["🏠 docs/index.html<br/>Página inicial"] --> B["📋 docs/extrator.html"]
   A --> S["⚓ docs/surveyanchor.html"]
   A --> C["🗺️ docs/batimetria.html"]
+  A --> H["💻 docs/hw_inventory.html"]
   A --> O["🏛️ docs/sobre.html"]
   B --> D["📁 docs/assets/"]
   S --> D
   C --> D
+  H --> D
 ```
 
 | Passo do visitante | O que acontece |
@@ -215,6 +222,7 @@ flowchart LR
     ├── 📄 extrator.html
     ├── 📄 surveyanchor.html
     ├── 📄 batimetria.html
+    ├── 📄 hw_inventory.html
     ├── 📄 privacidade.md
     └── 📁 assets/
         ├── 📄 favicon.ico / favicon.png / logo_ggemma.png
@@ -223,7 +231,8 @@ flowchart LR
         ├── 📄 versions.json
         ├── 📄 extrator_demo_tabela.svg
         ├── 📄 surveyanchor_demo_mapa.svg
-        └── 📄 batimetria_demo_fluxo.svg
+        ├── 📄 batimetria_demo_fluxo.svg
+        └── 📄 hw_inventory_demo_fluxo.svg
 
 scripts/                              ← 🔧 só na sua máquina (ignorado pelo Git)
 ```

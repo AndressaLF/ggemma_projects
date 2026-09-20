@@ -3,5 +3,6 @@
   "surveyanchor": "0.7.3",
   "batimetria_kml_shape": "suite",
   "batimetria_kml_shape_detail": "SHP v1.8.0 · linhas v1.0.1",
+  "hw_inventory": "0.3.5",
   "source": "tools/sync_versions.py"
 }

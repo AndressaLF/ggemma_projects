@@ -19,3 +19,8 @@ fallback = "suite"
 # Sem pyproject: mantém o rótulo composto abaixo no sync (label_readme / label_badge)
 label = "suite"
 label_detail = "SHP v1.8.0 · linhas v1.0.1"
+
+[tools.hw_inventory]
+# Projeto fora de Py_GGEMMA_projects — versão via fallback
+pastas = []
+fallback = "0.3.5"

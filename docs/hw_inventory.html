@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="hw_inventory — inventário patrimonial de hardware: coleta dados do PC e gera Excel + PDF, offline.">
+  <title>hw_inventory</title>
+  <link rel="icon" href="assets/favicon.ico" sizes="any">
+  <link rel="icon" href="assets/favicon.png" type="image/png" sizes="64x64">
+  <link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="pt_BR">
+  <meta property="og:title" content="hw_inventory — inventário patrimonial de hardware">
+  <meta property="og:description" content="Coleta hardware do PC, associa dados patrimoniais e gera planilha Excel e relatório PDF. Offline, um computador por vez.">
+  <meta property="og:url" content="https://andressalf.github.io/ggemma_projects/hw_inventory.html">
+  <meta property="og:image" content="https://andressalf.github.io/ggemma_projects/assets/og-card.svg">
+  <link rel="stylesheet" href="assets/style.css">
+</head>
+<body>
+  <div class="container">
+    <nav class="site-nav" aria-label="Principal">
+      <a href="index.html">Catálogo</a>
+      <a href="sobre.html">Sobre</a>
+      <a href="https://www.ggemma-ufrn.com/" rel="noopener noreferrer" target="_blank">Site do laboratório ↗</a>
+    </nav>
+
+    <nav class="breadcrumb">
+      <a href="index.html">🌊 GGEMMA · Voltar à vitrine</a>
+    </nav>
+
+    <header class="product-hero">
+      <h1>💻 hw_inventory</h1>
+      <p class="lead">
+        <strong>Documente o hardware de um computador e associe aos dados patrimoniais.</strong>
+        O programa coleta as peças disponíveis no sistema, junta com patrimônio / responsável / local
+        e gera <strong>planilha Excel</strong> e <strong>relatório PDF</strong> na Área de Trabalho.
+      </p>
+      <p style="color: var(--text-muted); font-size: 0.95rem; margin: 0 0 1rem;">
+        Status atual: <strong>v<span data-version="hw_inventory">0.3.5</span></strong>.
+        Uso <strong>offline</strong>, um PC por vez — não precisa saber programar.
+      </p>
+      <div class="badge-row">
+        <span class="badge live">🖥️ Inventário de hardware</span>
+        <span class="badge">📊 Excel + PDF</span>
+        <span class="badge">🔒 Offline</span>
+        <span class="badge">🪟 Windows (.exe)</span>
+      </div>
+    </header>
+
+    <main>
+      <section class="content-block">
+        <h2>🎯 O que ela resolve</h2>
+        <div class="feature-grid">
+          <div class="feature">
+            <h3>📦 A situação comum</h3>
+            <p>
+              É preciso registrar patrimônio e composição técnica de PCs
+              (tombamento, responsável, local, séries das peças) sem planilha manual demorada.
+            </p>
+          </div>
+          <div class="feature">
+            <h3>✨ Com o hw_inventory</h3>
+            <p>
+              Abra o programa no próprio PC, preencha os dados do bem, aguarde a coleta
+              e recolha Excel + PDF em <code>Área de Trabalho\Inventario_Patrimonial</code>.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <section class="content-block">
+        <h2>🧰 Como funciona</h2>
+        <ul class="tool-list">
+          <li>
+            <span class="tool-name">🖥️ Modo Individual (padrão)</span>
+            <span class="tool-version">Offline</span>
+            <span class="tool-desc">
+              Não depende de Active Directory nem de rede. Após <strong>Concluído</strong>, o programa encerra.
+            </span>
+          </li>
+          <li>
+            <span class="tool-name">🏛️ Modo Active Directory</span>
+            <span class="tool-version">Opcional</span>
+            <span class="tool-desc">
+              Só libera com domínio + grupo Administrador do domínio.
+              A coleta continua sendo <strong>neste</strong> PC (não varre a rede).
+            </span>
+          </li>
+          <li>
+            <span class="tool-name">📋 Fluxos de patrimônio</span>
+            <span class="tool-version">Com ou sem número</span>
+            <span class="tool-desc">
+              Com número oficial (recomendado) ou sem número (com confirmação e alerta no relatório).
+            </span>
+          </li>
+        </ul>
+      </section>
+
+      <section class="content-block">
+        <h2>👁️ Como fica na prática</h2>
+        <p style="margin: 0 0 1rem; color: var(--text-muted);">
+          Fluxo resumido: abrir como administrador → escolher o modo → preencher o formulário →
+          gerar inventário → recolher Excel e PDF.
+        </p>
+        <div class="demo-image-wrap">
+          <img
+            class="demo-image"
+            src="assets/hw_inventory_demo_fluxo.svg"
+            alt="Fluxo do hw_inventory: PC → formulário → Excel e PDF"
+            loading="lazy"
+          >
+        </div>
+        <p style="color: var(--text-muted); font-size: 0.85rem; margin: 0.75rem 0 0;">
+          📊 Esquema ilustrativo — o detalhe passo a passo está no manual do repositório.
+        </p>
+      </section>
+
+      <section class="content-block" id="como-comecar">
+        <h2>▶️ Como começar (Windows)</h2>
+        <pre><code>1. Baixe hw-inventory.exe no repositório (pasta dist/)
+2. No PC a inventariar: botão direito → Executar como administrador
+3. Escolha Modo Individual (ou AD, se autorizado)
+4. Preencha patrimônio (se houver), responsável e local
+5. Clique em Gerar inventario e aguarde
+6. Arquivos em: Área de Trabalho\Inventario_Patrimonial\</code></pre>
+        <p style="color: var(--text-muted); font-size: 0.9rem; margin: 0.75rem 0 0;">
+          Manual ilustrado: <code>dist/MANUAL_UTILIZACAO.pdf</code> no repositório.
+          Linux/macOS usam binário próprio (não o <code>.exe</code>).
+        </p>
+      </section>
+
+      <section class="content-block">
+        <h2>📚 Documentação e download</h2>
+        <p style="margin: 0; color: var(--text-muted);">
+          Pacote público no GitHub (executável + manual):
+          <a href="https://github.com/AndressaLF/hw_inventory" rel="noopener noreferrer" target="_blank">
+            github.com/AndressaLF/hw_inventory
+          </a>
+        </p>
+        <div class="cta-row">
+          <a class="btn btn-primary" href="https://github.com/AndressaLF/hw_inventory" rel="noopener noreferrer" target="_blank">
+            📦 Abrir repositório
+          </a>
+          <a class="btn btn-ghost" href="https://github.com/AndressaLF/hw_inventory/blob/main/dist/MANUAL_UTILIZACAO.pdf" rel="noopener noreferrer" target="_blank">
+            📄 Manual PDF
+          </a>
+        </div>
+      </section>
+
+      <section class="content-block">
+        <h2>👥 Para quem é</h2>
+        <ul>
+          <li>🏛️ <strong>Patrimônio / administração</strong> — registrar bens de informática com evidência</li>
+          <li>🖥️ <strong>TI e suporte</strong> — documentar configuração e séries sem planilha manual</li>
+          <li>🔬 <strong>Unidades de pesquisa e laboratórios</strong> — inventário periódico de estações de trabalho</li>
+        </ul>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <p><a href="index.html">🔙 GGEMMA · Voltar à vitrine</a></p>
+      <p>Atualizado em <time id="last-update"></time></p>
+    </footer>
+  </div>
+  <script src="assets/last-update.js"></script>
+</body>
+</html>
